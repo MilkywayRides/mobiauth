@@ -50,13 +50,18 @@ fun SearchScreen() {
             onValueChange = { searchQuery = it },
             modifier = Modifier.fillMaxWidth(),
             placeholder = { 
-                Text("Search...", color = MutedForeground) 
+                Text(
+                    "Search...", 
+                    color = MutedForeground,
+                    style = MaterialTheme.typography.bodyLarge
+                ) 
             },
             leadingIcon = {
                 Icon(
                     Icons.Outlined.Search,
                     contentDescription = null,
-                    tint = MutedForeground
+                    tint = MutedForeground,
+                    modifier = Modifier.size(20.dp)
                 )
             },
             trailingIcon = {
@@ -66,22 +71,23 @@ fun SearchScreen() {
                             Icons.Outlined.Close,
                             contentDescription = "Clear",
                             tint = MutedForeground,
-                            modifier = Modifier.size(20.dp)
+                            modifier = Modifier.size(18.dp)
                         )
                     }
                 }
             },
             colors = OutlinedTextFieldDefaults.colors(
-                focusedContainerColor = Card,
-                unfocusedContainerColor = Card,
-                focusedBorderColor = Ring,
-                unfocusedBorderColor = Border,
+                focusedContainerColor = Background,
+                unfocusedContainerColor = Background,
+                focusedBorderColor = Input,
+                unfocusedBorderColor = Input,
                 focusedTextColor = Foreground,
                 unfocusedTextColor = Foreground,
-                cursorColor = Primary
+                cursorColor = Foreground
             ),
-            shape = RoundedCornerShape(8.dp),
-            singleLine = true
+            shape = RoundedCornerShape(12.dp),
+            singleLine = true,
+            textStyle = MaterialTheme.typography.bodyLarge
         )
 
         Spacer(modifier = Modifier.height(24.dp))

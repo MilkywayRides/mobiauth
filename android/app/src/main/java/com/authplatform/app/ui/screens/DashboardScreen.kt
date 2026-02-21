@@ -40,6 +40,9 @@ fun DashboardScreen(
 
     LaunchedEffect(Unit) {
         viewModel.loadUserData()
+        if (uiState.isAuthenticated) {
+            viewModel.loadSessions()
+        }
     }
 
     LaunchedEffect(uiState.isLoadingSessions) {
@@ -54,7 +57,11 @@ fun DashboardScreen(
         onRefresh = {
             isRefreshing = true
             viewModel.loadUserData()
-            viewModel.loadSessions()
+            if (uiState.isAuthenticated) {
+                viewModel.loadSessions()
+            } else {
+                isRefreshing = false
+            }
         }
     ) {
         Column(
