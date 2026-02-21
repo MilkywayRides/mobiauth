@@ -1,8 +1,10 @@
 package com.authplatform.app.ui.screens
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.ArrowDropDown
 import androidx.compose.material.icons.outlined.Phone
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -25,23 +27,25 @@ fun PhoneAuthScreen(
     viewModel: AuthViewModel = hiltViewModel()
 ) {
     var phoneNumber by remember { mutableStateOf("") }
+    var countryCode by remember { mutableStateOf("+1") }
+    var showCountryPicker by remember { mutableStateOf(false) }
     var verificationIdState by remember { mutableStateOf<String?>(null) }
     var otpCode by remember { mutableStateOf("") }
     var isLoading by remember { mutableStateOf(false) }
     var errorMessage by remember { mutableStateOf<String?>(null) }
 
-    Surface(
-        modifier = Modifier.fillMaxSize(),
-        color = Background
-    ) {
+    Box(modifier = Modifier.fillMaxSize()) {
+        AnimatedGradientBackground()
+        
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .statusBarsPadding()
+                .navigationBarsPadding()
                 .padding(24.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
         ) {
-            Spacer(modifier = Modifier.weight(1f))
-            
             Icon(
                 imageVector = Icons.Outlined.Phone,
                 contentDescription = null,
@@ -52,83 +56,111 @@ fun PhoneAuthScreen(
             Spacer(modifier = Modifier.height(24.dp))
 
             Text(
-                text = "Phone Verification (Optional)",
-                style = MaterialTheme.typography.headlineMedium,
+                text = "Phone Verification",
+                style = MaterialTheme.typography.headlineLarge,
                 color = Foreground
             )
 
+            Spacer(modifier = Modifier.height(8.dp))
+
             Text(
-                text = "Add your phone number or skip to continue",
+                text = "Enter your phone number to continue",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MutedForeground
             )
 
-            Spacer(modifier = Modifier.height(32.dp))
+            Spacer(modifier = Modifier.height(48.dp))
 
             if (verificationIdState == null) {
-                OutlinedTextField(
-                    value = phoneNumber,
-                    onValueChange = { phoneNumber = it },
-                    label = { Text("Phone Number") },
-                    placeholder = { Text("+1234567890") },
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
+                Row(
                     modifier = Modifier.fillMaxWidth(),
-                    enabled = !isLoading
-                )
+                    horizontalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    // Country Code Dropdown
+                    OutlinedButton(
+                        onClick = { showCountryPicker = true },
+                        modifier = Modifier.width(100.dp),
+                        colors = ButtonDefaults.outlinedButtonColors(
+                            containerColor = Card.copy(alpha = 0.5f),
+                            contentColor = Foreground
+                        ),
+                        border = androidx.compose.foundation.BorderStroke(1.dp, Border),
+                        shape = RoundedCornerShape(12.dp)
+                    ) {
+                        Text(countryCode)
+                        Icon(
+                            Icons.Outlined.ArrowDropDown,
+                            null,
+                            modifier = Modifier.size(20.dp)
+                        )
+                    }
+                    
+                    // Phone Number Input
+                    OutlinedTextField(
+                        value = phoneNumber,
+                        onValueChange = { phoneNumber = it },
+                        placeholder = { Text("Phone number", color = MutedForeground) },
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
+                        modifier = Modifier.weight(1f),
+                        enabled = !isLoading,
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedContainerColor = Card.copy(alpha = 0.5f),
+                            unfocusedContainerColor = Card.copy(alpha = 0.5f),
+                            focusedBorderColor = Border,
+                            unfocusedBorderColor = Border,
+                            focusedTextColor = Foreground,
+                            unfocusedTextColor = Foreground
+                        ),
+                        shape = RoundedCornerShape(12.dp),
+                        singleLine = true
+                    )
+                }
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                Button(
+                PrimaryButton(
+                    text = if (isLoading) "Sending..." else "Send OTP",
                     onClick = {
                         errorMessage = "Firebase Phone Auth not configured. Please complete Firebase setup."
                     },
-                    modifier = Modifier.fillMaxWidth(),
                     enabled = !isLoading && phoneNumber.isNotBlank()
-                ) {
-                    if (isLoading) {
-                        CircularProgressIndicator(
-                            modifier = Modifier.size(20.dp),
-                            color = MaterialTheme.colorScheme.onPrimary
-                        )
-                    } else {
-                        Text("Send OTP")
-                    }
-                }
+                )
             } else {
                 OutlinedTextField(
                     value = otpCode,
                     onValueChange = { otpCode = it },
-                    label = { Text("OTP Code") },
-                    placeholder = { Text("123456") },
+                    placeholder = { Text("Enter OTP", color = MutedForeground) },
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                     modifier = Modifier.fillMaxWidth(),
-                    enabled = !isLoading
+                    enabled = !isLoading,
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedContainerColor = Card.copy(alpha = 0.5f),
+                        unfocusedContainerColor = Card.copy(alpha = 0.5f),
+                        focusedBorderColor = Border,
+                        unfocusedBorderColor = Border,
+                        focusedTextColor = Foreground,
+                        unfocusedTextColor = Foreground
+                    ),
+                    shape = RoundedCornerShape(12.dp),
+                    singleLine = true
                 )
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                Button(
+                PrimaryButton(
+                    text = if (isLoading) "Verifying..." else "Verify OTP",
                     onClick = {
                         errorMessage = "Firebase Phone Auth not configured. Please complete Firebase setup."
                     },
-                    modifier = Modifier.fillMaxWidth(),
                     enabled = !isLoading && otpCode.isNotBlank()
-                ) {
-                    if (isLoading) {
-                        CircularProgressIndicator(
-                            modifier = Modifier.size(20.dp),
-                            color = MaterialTheme.colorScheme.onPrimary
-                        )
-                    } else {
-                        Text("Verify OTP")
-                    }
-                }
+                )
+
+                Spacer(modifier = Modifier.height(16.dp))
 
                 TextButton(
-                    onClick = { verificationIdState = null; otpCode = "" },
-                    modifier = Modifier.fillMaxWidth()
+                    onClick = { verificationIdState = null; otpCode = "" }
                 ) {
-                    Text("Change Number")
+                    Text("Change Number", color = Primary)
                 }
             }
 
@@ -136,18 +168,44 @@ fun PhoneAuthScreen(
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
                     text = it,
-                    color = MaterialTheme.colorScheme.error,
+                    color = Destructive,
                     style = MaterialTheme.typography.bodySmall
                 )
             }
 
-            Spacer(modifier = Modifier.weight(1f))
+            Spacer(modifier = Modifier.height(24.dp))
 
             TextButton(onClick = onSkip) {
-                Text("Skip for now")
+                Text("Skip for now", color = MutedForeground)
             }
-            
-            Spacer(modifier = Modifier.height(16.dp))
+        }
+        
+        // Country Picker Dialog
+        if (showCountryPicker) {
+            AlertDialog(
+                onDismissRequest = { showCountryPicker = false },
+                title = { Text("Select Country Code") },
+                text = {
+                    Column {
+                        listOf("+1 USA", "+44 UK", "+91 India", "+86 China", "+81 Japan").forEach { country ->
+                            TextButton(
+                                onClick = {
+                                    countryCode = country.split(" ")[0]
+                                    showCountryPicker = false
+                                },
+                                modifier = Modifier.fillMaxWidth()
+                            ) {
+                                Text(country, modifier = Modifier.fillMaxWidth())
+                            }
+                        }
+                    }
+                },
+                confirmButton = {
+                    TextButton(onClick = { showCountryPicker = false }) {
+                        Text("Cancel")
+                    }
+                }
+            )
         }
     }
 }
