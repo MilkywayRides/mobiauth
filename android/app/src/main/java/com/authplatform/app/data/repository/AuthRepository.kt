@@ -187,13 +187,56 @@ class AuthRepository @Inject constructor(
     }
 
     suspend fun getUserData(): Map<String, String?> {
-        val prefs = context.dataStore.data.first()
-        return mapOf(
-            "name" to prefs[USER_NAME],
-            "email" to prefs[USER_EMAIL],
-            "role" to prefs[USER_ROLE],
-            "id" to prefs[USER_ID]
-        )
+        return try {
+            val token = context.dataStore.data.first()[SESSION_TOKEN]
+            if (token.isNullOrEmpty()) {
+                // Return local data if no token
+                val prefs = context.dataStore.data.first()
+                return mapOf(
+                    "name" to prefs[USER_NAME],
+                    "email" to prefs[USER_EMAIL],
+                    "role" to prefs[USER_ROLE],
+                    "id" to prefs[USER_ID]
+                )
+            }
+
+            // Fetch from API
+            val response = api.getSession()
+            if (response.isSuccessful && response.body()?.user != null) {
+                val user = response.body()!!.user!!
+                // Update local storage
+                context.dataStore.edit { prefs ->
+                    prefs[USER_NAME] = user.name
+                    prefs[USER_EMAIL] = user.email
+                    prefs[USER_ROLE] = user.role
+                    prefs[USER_ID] = user.id
+                }
+                mapOf(
+                    "name" to user.name,
+                    "email" to user.email,
+                    "role" to user.role,
+                    "id" to user.id
+                )
+            } else {
+                // Fallback to local data
+                val prefs = context.dataStore.data.first()
+                mapOf(
+                    "name" to prefs[USER_NAME],
+                    "email" to prefs[USER_EMAIL],
+                    "role" to prefs[USER_ROLE],
+                    "id" to prefs[USER_ID]
+                )
+            }
+        } catch (e: Exception) {
+            // Fallback to local data on error
+            val prefs = context.dataStore.data.first()
+            mapOf(
+                "name" to prefs[USER_NAME],
+                "email" to prefs[USER_EMAIL],
+                "role" to prefs[USER_ROLE],
+                "id" to prefs[USER_ID]
+            )
+        }
     }
 
     suspend fun getSessions(): Result<List<Session>> {
