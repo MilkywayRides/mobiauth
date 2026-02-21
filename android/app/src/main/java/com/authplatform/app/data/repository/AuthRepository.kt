@@ -29,6 +29,18 @@ class AuthRepository @Inject constructor(
         private val USER_EMAIL = stringPreferencesKey("user_email")
         private val USER_ROLE = stringPreferencesKey("user_role")
         private val USER_ID = stringPreferencesKey("user_id")
+        
+        suspend fun getSessionToken(context: Context): String? {
+            return context.dataStore.data.first()[SESSION_TOKEN]
+        }
+        
+        suspend fun saveCookie(context: Context, name: String, value: String) {
+            if (name.contains("session", ignoreCase = true)) {
+                context.dataStore.edit { prefs ->
+                    prefs[SESSION_TOKEN] = value
+                }
+            }
+        }
     }
 
     val isLoggedIn: Flow<Boolean> = context.dataStore.data.map { prefs ->

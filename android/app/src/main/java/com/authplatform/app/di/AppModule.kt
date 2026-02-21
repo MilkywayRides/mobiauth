@@ -1,19 +1,16 @@
 package com.authplatform.app.di
 
 import android.content.Context
-import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.core.stringPreferencesKey
-import androidx.datastore.preferences.preferencesDataStore
 import com.authplatform.app.BuildConfig
 import com.authplatform.app.data.api.AuthApi
+import com.authplatform.app.data.repository.AuthRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.runBlocking
 import okhttp3.Cookie
 import okhttp3.CookieJar
 import okhttp3.HttpUrl
@@ -23,8 +20,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
-
-val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "auth_prefs")
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -39,13 +34,10 @@ object AppModule {
             .cookieJar(object : CookieJar {
                 override fun saveFromResponse(url: HttpUrl, cookies: List<Cookie>) {
                     cookies.forEach { cookie ->
-                        if (cookie.name == "auth.session_token" || cookie.name.contains("session")) {
+                        if (cookie.name.contains("session", ignoreCase = true)) {
                             android.util.Log.d("CookieJar", "Saving cookie: ${cookie.name}=${cookie.value.take(20)}...")
-                            // Save to DataStore
-                            kotlinx.coroutines.runBlocking {
-                                context.dataStore.edit { prefs ->
-                                    prefs[stringPreferencesKey("session_cookie_${cookie.name}")] = cookie.value
-                                }
+                            runBlocking {
+                                AuthRepository.saveCookie(context, cookie.name, cookie.value)
                             }
                         }
                     }
@@ -53,21 +45,17 @@ object AppModule {
 
                 override fun loadForRequest(url: HttpUrl): List<Cookie> {
                     val cookies = mutableListOf<Cookie>()
-                    // Load from DataStore
-                    kotlinx.coroutines.runBlocking {
-                        val prefs = context.dataStore.data.first()
-                        prefs.asMap().forEach { (key, value) ->
-                            if (key.name.startsWith("session_cookie_")) {
-                                val cookieName = key.name.removePrefix("session_cookie_")
-                                val cookie = Cookie.Builder()
-                                    .name(cookieName)
-                                    .value(value.toString())
-                                    .domain(url.host)
-                                    .path("/")
-                                    .build()
-                                cookies.add(cookie)
-                                android.util.Log.d("CookieJar", "Loading cookie: $cookieName")
-                            }
+                    runBlocking {
+                        val token = AuthRepository.getSessionToken(context)
+                        if (!token.isNullOrEmpty()) {
+                            val cookie = Cookie.Builder()
+                                .name("auth.session_token")
+                                .value(token)
+                                .domain(url.host)
+                                .path("/")
+                                .build()
+                            cookies.add(cookie)
+                            android.util.Log.d("CookieJar", "Loading session cookie for ${url.host}")
                         }
                     }
                     return cookies
