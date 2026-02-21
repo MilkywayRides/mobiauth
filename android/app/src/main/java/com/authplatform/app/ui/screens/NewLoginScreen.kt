@@ -68,100 +68,111 @@ fun NewLoginScreen(
 
             Spacer(modifier = Modifier.height(48.dp))
 
-            Surface(
+            // Email
+            OutlinedTextField(
+                value = email,
+                onValueChange = { email = it },
                 modifier = Modifier.fillMaxWidth(),
-                shape = RoundedCornerShape(16.dp),
-                color = Card.copy(alpha = 0.95f),
-                shadowElevation = 8.dp
-            ) {
-                Column(
-                    modifier = Modifier.padding(24.dp)
-                ) {
-                    Text(
-                        "Email",
-                        style = MaterialTheme.typography.labelMedium,
-                        color = Foreground
-                    )
-                    Spacer(modifier = Modifier.height(8.dp))
-                    OutlinedTextField(
-                        value = email,
-                        onValueChange = { email = it },
-                        modifier = Modifier.fillMaxWidth(),
-                        placeholder = { Text("you@example.com", color = MutedForeground) },
-                        leadingIcon = {
-                            Icon(Icons.Outlined.Email, null, tint = MutedForeground, modifier = Modifier.size(20.dp))
-                        },
-                        colors = OutlinedTextFieldDefaults.colors(
-                            focusedContainerColor = Background,
-                            unfocusedContainerColor = Background,
-                            focusedBorderColor = Input,
-                            unfocusedBorderColor = Input,
-                            focusedTextColor = Foreground,
-                            unfocusedTextColor = Foreground
-                        ),
-                        shape = RoundedCornerShape(12.dp),
-                        singleLine = true,
-                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
-                    )
+                placeholder = { Text("Email", color = MutedForeground) },
+                leadingIcon = {
+                    Icon(Icons.Outlined.Email, null, tint = MutedForeground, modifier = Modifier.size(20.dp))
+                },
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedContainerColor = Card.copy(alpha = 0.5f),
+                    unfocusedContainerColor = Card.copy(alpha = 0.5f),
+                    focusedBorderColor = Border,
+                    unfocusedBorderColor = Border,
+                    focusedTextColor = Foreground,
+                    unfocusedTextColor = Foreground
+                ),
+                shape = RoundedCornerShape(12.dp),
+                singleLine = true,
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
+            )
 
-                    Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
-                    Text(
-                        "Password",
-                        style = MaterialTheme.typography.labelMedium,
-                        color = Foreground
-                    )
-                    Spacer(modifier = Modifier.height(8.dp))
-                    OutlinedTextField(
-                        value = password,
-                        onValueChange = { password = it },
-                        modifier = Modifier.fillMaxWidth(),
-                        placeholder = { Text("••••••••", color = MutedForeground) },
-                        leadingIcon = {
-                            Icon(Icons.Outlined.Lock, null, tint = MutedForeground, modifier = Modifier.size(20.dp))
-                        },
-                        trailingIcon = {
-                            IconButton(onClick = { passwordVisible = !passwordVisible }) {
-                                Icon(
-                                    if (passwordVisible) Icons.Outlined.Visibility else Icons.Outlined.VisibilityOff,
-                                    null,
-                                    tint = MutedForeground,
-                                    modifier = Modifier.size(20.dp)
-                                )
-                            }
-                        },
-                        visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
-                        colors = OutlinedTextFieldDefaults.colors(
-                            focusedContainerColor = Background,
-                            unfocusedContainerColor = Background,
-                            focusedBorderColor = Input,
-                            unfocusedBorderColor = Input,
-                            focusedTextColor = Foreground,
-                            unfocusedTextColor = Foreground
-                        ),
-                        shape = RoundedCornerShape(12.dp),
-                        singleLine = true,
-                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
-                    )
-
-                    if (uiState.error != null) {
-                        Spacer(modifier = Modifier.height(16.dp))
-                        Text(
-                            uiState.error!!,
-                            color = Destructive,
-                            style = MaterialTheme.typography.bodySmall
+            // Password
+            OutlinedTextField(
+                value = password,
+                onValueChange = { password = it },
+                modifier = Modifier.fillMaxWidth(),
+                placeholder = { Text("Password", color = MutedForeground) },
+                leadingIcon = {
+                    Icon(Icons.Outlined.Lock, null, tint = MutedForeground, modifier = Modifier.size(20.dp))
+                },
+                trailingIcon = {
+                    IconButton(onClick = { passwordVisible = !passwordVisible }) {
+                        Icon(
+                            if (passwordVisible) Icons.Outlined.Visibility else Icons.Outlined.VisibilityOff,
+                            null,
+                            tint = MutedForeground,
+                            modifier = Modifier.size(20.dp)
                         )
                     }
+                },
+                visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedContainerColor = Card.copy(alpha = 0.5f),
+                    unfocusedContainerColor = Card.copy(alpha = 0.5f),
+                    focusedBorderColor = Border,
+                    unfocusedBorderColor = Border,
+                    focusedTextColor = Foreground,
+                    unfocusedTextColor = Foreground
+                ),
+                shape = RoundedCornerShape(12.dp),
+                singleLine = true,
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
+            )
 
-                    Spacer(modifier = Modifier.height(24.dp))
+            if (uiState.error != null) {
+                Spacer(modifier = Modifier.height(16.dp))
+                Text(
+                    uiState.error!!,
+                    color = Destructive,
+                    style = MaterialTheme.typography.bodySmall
+                )
+            }
 
-                    PrimaryButton(
-                        text = if (uiState.isLoading) "Signing in..." else "Sign in",
-                        onClick = {
-                            viewModel.signInEmail(email, password)
-                        },
-                        enabled = !uiState.isLoading && email.isNotEmpty() && password.isNotEmpty()
-                    )
+            Spacer(modifier = Modifier.height(24.dp))
+
+            PrimaryButton(
+                text = if (uiState.isLoading) "Signing in..." else "Sign in",
+                onClick = {
+                    viewModel.signInEmail(email, password)
+                },
+                enabled = !uiState.isLoading && email.isNotEmpty() && password.isNotEmpty()
+            )
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                OutlinedButton(
+                    onClick = { /* Google OAuth */ },
+                    modifier = Modifier.weight(1f),
+                    colors = ButtonDefaults.outlinedButtonColors(
+                        containerColor = Card.copy(alpha = 0.5f),
+                        contentColor = Foreground
+                    ),
+                    border = androidx.compose.foundation.BorderStroke(1.dp, Border),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    Text("Google")
+                }
+                OutlinedButton(
+                    onClick = { /* GitHub OAuth */ },
+                    modifier = Modifier.weight(1f),
+                    colors = ButtonDefaults.outlinedButtonColors(
+                        containerColor = Card.copy(alpha = 0.5f),
+                        contentColor = Foreground
+                    ),
+                    border = androidx.compose.foundation.BorderStroke(1.dp, Border),
+                    shape = RoundedCornerShape(12.dp)
+                ) {
+                    Text("GitHub")
                 }
             }
 

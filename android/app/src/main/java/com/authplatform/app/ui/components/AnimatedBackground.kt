@@ -56,13 +56,13 @@ fun AnimatedGradientBackground() {
         drawCircle(
             brush = Brush.radialGradient(
                 colors = listOf(
-                    Color(0xFF8B5CF6).copy(alpha = 0.3f),
+                    Color(0xFF8B5CF6).copy(alpha = 0.4f),
                     Color(0xFF8B5CF6).copy(alpha = 0f)
                 ),
                 center = Offset(x1, y1),
-                radius = 300f
+                radius = 600f
             ),
-            radius = 300f,
+            radius = 600f,
             center = Offset(x1, y1)
         )
         
@@ -73,13 +73,13 @@ fun AnimatedGradientBackground() {
         drawCircle(
             brush = Brush.radialGradient(
                 colors = listOf(
-                    Color(0xFF3B82F6).copy(alpha = 0.3f),
+                    Color(0xFF3B82F6).copy(alpha = 0.4f),
                     Color(0xFF3B82F6).copy(alpha = 0f)
                 ),
                 center = Offset(x2, y2),
-                radius = 350f
+                radius = 650f
             ),
-            radius = 350f,
+            radius = 650f,
             center = Offset(x2, y2)
         )
         
@@ -90,13 +90,13 @@ fun AnimatedGradientBackground() {
         drawCircle(
             brush = Brush.radialGradient(
                 colors = listOf(
-                    Color(0xFFEC4899).copy(alpha = 0.25f),
+                    Color(0xFFEC4899).copy(alpha = 0.35f),
                     Color(0xFFEC4899).copy(alpha = 0f)
                 ),
                 center = Offset(x3, y3),
-                radius = 280f
+                radius = 550f
             ),
-            radius = 280f,
+            radius = 550f,
             center = Offset(x3, y3)
         )
     }
