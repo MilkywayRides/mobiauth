@@ -189,8 +189,10 @@ class AuthRepository @Inject constructor(
     suspend fun getUserData(): Map<String, String?> {
         return try {
             val token = context.dataStore.data.first()[SESSION_TOKEN]
+            android.util.Log.d("AuthRepository", "Token: ${token?.take(20)}...")
+            
             if (token.isNullOrEmpty()) {
-                // Return local data if no token
+                android.util.Log.d("AuthRepository", "No token, returning local data")
                 val prefs = context.dataStore.data.first()
                 return mapOf(
                     "name" to prefs[USER_NAME],
@@ -201,9 +203,14 @@ class AuthRepository @Inject constructor(
             }
 
             // Fetch from API
+            android.util.Log.d("AuthRepository", "Fetching user data from API...")
             val response = api.getSession()
+            android.util.Log.d("AuthRepository", "API Response: ${response.code()}, Body: ${response.body()}")
+            
             if (response.isSuccessful && response.body()?.user != null) {
                 val user = response.body()!!.user!!
+                android.util.Log.d("AuthRepository", "User from API: name=${user.name}, role=${user.role}")
+                
                 // Update local storage
                 context.dataStore.edit { prefs ->
                     prefs[USER_NAME] = user.name
@@ -211,16 +218,17 @@ class AuthRepository @Inject constructor(
                     prefs[USER_ROLE] = user.role
                     prefs[USER_ID] = user.id
                 }
-                mapOf(
+                
+                return mapOf(
                     "name" to user.name,
                     "email" to user.email,
                     "role" to user.role,
                     "id" to user.id
                 )
             } else {
-                // Fallback to local data
+                android.util.Log.d("AuthRepository", "API failed, using local data")
                 val prefs = context.dataStore.data.first()
-                mapOf(
+                return mapOf(
                     "name" to prefs[USER_NAME],
                     "email" to prefs[USER_EMAIL],
                     "role" to prefs[USER_ROLE],
@@ -228,9 +236,9 @@ class AuthRepository @Inject constructor(
                 )
             }
         } catch (e: Exception) {
-            // Fallback to local data on error
+            android.util.Log.e("AuthRepository", "Error fetching user data", e)
             val prefs = context.dataStore.data.first()
-            mapOf(
+            return mapOf(
                 "name" to prefs[USER_NAME],
                 "email" to prefs[USER_EMAIL],
                 "role" to prefs[USER_ROLE],

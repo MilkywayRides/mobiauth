@@ -270,14 +270,22 @@ class AuthViewModel @Inject constructor(
 
     fun loadSessions() {
         viewModelScope.launch {
+            // Only load if authenticated
+            if (!_uiState.value.isAuthenticated) {
+                android.util.Log.d("AuthViewModel", "Not authenticated, skipping sessions load")
+                return@launch
+            }
+            
             _uiState.value = _uiState.value.copy(isLoadingSessions = true)
             val result = repository.getSessions()
             result.onSuccess { sessions ->
+                android.util.Log.d("AuthViewModel", "Loaded ${sessions.size} sessions")
                 _uiState.value = _uiState.value.copy(
                     sessions = sessions,
                     isLoadingSessions = false
                 )
-            }.onFailure {
+            }.onFailure { error ->
+                android.util.Log.e("AuthViewModel", "Failed to load sessions", error)
                 _uiState.value = _uiState.value.copy(isLoadingSessions = false)
             }
         }
