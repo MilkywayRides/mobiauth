@@ -48,14 +48,9 @@ fun NavGraph() {
         }
 
         composable(Routes.LOGIN) {
-            LoginScreen(
+            NewLoginScreen(
                 onNavigateToSignup = {
                     navController.navigate(Routes.SIGNUP) {
-                        launchSingleTop = true
-                    }
-                },
-                onNavigateToQrScanner = {
-                    navController.navigate(Routes.QR_SCANNER) {
                         launchSingleTop = true
                     }
                 },
@@ -68,7 +63,7 @@ fun NavGraph() {
         }
 
         composable(Routes.SIGNUP) {
-            SignupScreen(
+            NewSignupScreen(
                 onNavigateToLogin = {
                     navController.popBackStack()
                 },
