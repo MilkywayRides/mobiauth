@@ -1,0 +1,875 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:2:1-33:12
+MERGED from [com.google.firebase:firebase-auth-ktx:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/54fea16fc17da32017d80a3a82cd9c2f/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:2:1-17:12
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:17:1-75:12
+MERGED from [androidx.browser:browser:1.8.0] /home/ankit/.gradle/caches/8.9/transforms/cb609013bedcfbca269d9c65c059f5b3/transformed/browser-1.8.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.camera:camera-video:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/4c75ab0a45b496094c028496874ca1cf/transformed/camera-video-1.4.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.camera:camera-view:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/141a10ec4e90af41a09b7ff057e8a424/transformed/camera-view-1.4.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.camera:camera-lifecycle:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/1e58dd774e4adbc408bef10ae2e410bd/transformed/camera-lifecycle-1.4.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.camera:camera-camera2:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/7e540c62827f789b95432550a84c043f/transformed/camera-camera2-1.4.1/AndroidManifest.xml:17:1-36:12
+MERGED from [androidx.camera:camera-core:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/3a563e427ed515dfdbf7695592c1cff3/transformed/camera-core-1.4.1/AndroidManifest.xml:17:1-36:12
+MERGED from [com.google.mlkit:barcode-scanning:17.3.0] /home/ankit/.gradle/caches/8.9/transforms/f4f87bb07247ae31520f95ea5167b924/transformed/barcode-scanning-17.3.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.1] /home/ankit/.gradle/caches/8.9/transforms/4ea51e3fd4c3f7f74044a384cc347abf/transformed/play-services-mlkit-barcode-scanning-18.3.1/AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.mlkit:barcode-scanning-common:17.0.0] /home/ankit/.gradle/caches/8.9/transforms/758c3789ea36090f0525a7a39b2d9c34/transformed/barcode-scanning-common-17.0.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.mlkit:vision-common:17.3.0] /home/ankit/.gradle/caches/8.9/transforms/10a2735cfe71961bdb814122d16a79f9/transformed/vision-common-17.3.0/AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.mlkit:common:18.11.0] /home/ankit/.gradle/caches/8.9/transforms/f601eb822793f68c30ec72a1ed42c743/transformed/common-18.11.0/AndroidManifest.xml:2:1-26:12
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/8839528ec059ebb618b033b86eec43e2/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /home/ankit/.gradle/caches/8.9/transforms/2964d6af7adb8c9c5073b79cad6c1d76/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.firebase:firebase-common:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/9c7f34e5cb972aff26e843bf8e0c1424/transformed/firebase-common-21.0.0/AndroidManifest.xml:15:1-41:12
+MERGED from [androidx.credentials:credentials:1.2.0-rc01] /home/ankit/.gradle/caches/8.9/transforms/2d477e9b9e97a53ae7b21d5f72295fb7/transformed/credentials-1.2.0-rc01/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/ankit/.gradle/caches/8.9/transforms/202e45fe24bac5110a60589e60fad9a7/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:17:1-44:12
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] /home/ankit/.gradle/caches/8.9/transforms/6cc92391ee296f4facedd968b70bed3a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:17:1-40:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.2] /home/ankit/.gradle/caches/8.9/transforms/0219f5a776bd984c2bd7a9b8a478408f/transformed/play-services-auth-api-phone-18.0.2/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] /home/ankit/.gradle/caches/8.9/transforms/7c7fbab4d8f0046dfe66cbeeeb5faf60/transformed/firebase-appcheck-interop-17.0.0/AndroidManifest.xml:15:1-25:12
+MERGED from [com.google.android.gms:play-services-fido:20.1.0] /home/ankit/.gradle/caches/8.9/transforms/ac5d44b94f9c7c21109cdc822562453a/transformed/play-services-fido-20.1.0/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] /home/ankit/.gradle/caches/8.9/transforms/0861d11a3b493a36b4b534e204a1af55/transformed/play-services-auth-base-18.0.4/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /home/ankit/.gradle/caches/8.9/transforms/936f6f7cac0b7ccc62179e467e1376de/transformed/play-services-base-18.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.mlkit:vision-interfaces:16.3.0] /home/ankit/.gradle/caches/8.9/transforms/6a2490c36298cdd10b608613707c184c/transformed/vision-interfaces-16.3.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.recaptcha:recaptcha:18.5.1] /home/ankit/.gradle/caches/8.9/transforms/c801f87dec2ab4c392d4f6be4ea7c64e/transformed/recaptcha-18.5.1/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.play:integrity:1.3.0] /home/ankit/.gradle/caches/8.9/transforms/7ff090a9cae65136f61e90bf3e0ca588/transformed/integrity-1.3.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.hilt:hilt-navigation-compose:1.2.0] /home/ankit/.gradle/caches/8.9/transforms/9512c7c1ec18610bcfc2a191a0820566/transformed/hilt-navigation-compose-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.hilt:hilt-navigation:1.2.0] /home/ankit/.gradle/caches/8.9/transforms/94aaac34d03d0b5de2d272bb172ed97f/transformed/hilt-navigation-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-common:2.8.5] /home/ankit/.gradle/caches/8.9/transforms/a64acfdbd69124737b9c011d7f8a4795/transformed/navigation-common-2.8.5/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-runtime:2.8.5] /home/ankit/.gradle/caches/8.9/transforms/f2dcf0a68b230ebd6d2fc079d6ea9fb4/transformed/navigation-runtime-2.8.5/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-common-ktx:2.8.5] /home/ankit/.gradle/caches/8.9/transforms/836014a23a0d0dff8be9438880c5578c/transformed/navigation-common-ktx-2.8.5/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.8.5] /home/ankit/.gradle/caches/8.9/transforms/d1774567823faeb89d1b8e66339c2e92/transformed/navigation-runtime-ktx-2.8.5/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-compose:2.8.5] /home/ankit/.gradle/caches/8.9/transforms/4b1aace7c2375208a9fc922a18e973d9/transformed/navigation-compose-2.8.5/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.dagger:hilt-android:2.53.1] /home/ankit/.gradle/caches/8.9/transforms/7efa31f0832a5c7fb59e11b91332ee00/transformed/hilt-android-2.53.1/AndroidManifest.xml:16:1-19:12
+MERGED from [io.coil-kt:coil-compose:2.7.0] /home/ankit/.gradle/caches/8.9/transforms/aa6c4d5901383e9e7c2c5f03080ccc9d/transformed/coil-compose-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil-compose-base:2.7.0] /home/ankit/.gradle/caches/8.9/transforms/634026558fd37fb21f0804236bbae6e5/transformed/coil-compose-base-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil:2.7.0] /home/ankit/.gradle/caches/8.9/transforms/4368111367bf96910694ed4a3a9453cf/transformed/coil-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil-base:2.7.0] /home/ankit/.gradle/caches/8.9/transforms/ccb8f218e94d23b9c9cc27bed815b82c/transformed/coil-base-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/ankit/.gradle/caches/8.9/transforms/f4dc4ee59e101d23f608217c08b908e9/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] /home/ankit/.gradle/caches/8.9/transforms/94bc9068d92a5c6a81af9e0e925b9604/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.5.1] /home/ankit/.gradle/caches/8.9/transforms/b614cfe6d8025c6ce57898eac253085a/transformed/fragment-1.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.material3:material3-android:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/bb9152203169c3f87be51a504d1fc561/transformed/material3-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.material:material-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/0c21e09b2ad35c10ee50b886604e2e60/transformed/material-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-core-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/b12f30b4790f9d1176dae6a5988d7b8c/transformed/animation-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-ripple-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/7a84dc36618dc4fb94e4f421dad292c9/transformed/material-ripple-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/953b288100f7d2a303edf57535cb6a60/transformed/animation-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/041ee50a6b3dc5739d39ec30cb091ac8/transformed/foundation-layout-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/fc1e0f140a6e7892f8959309deb84d1b/transformed/foundation-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/33d9e5dda2b44d8e0bcdac16f6155bd1/transformed/ui-tooling-data-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/1c851ff1e0d82dadf7ba5b80b3b17231/transformed/ui-unit-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/ab544a39714900a47c3d9ae5a894b3fd/transformed/ui-geometry-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-util-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/401268629efc6452bd613e2cc255e6a4/transformed/ui-util-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-text-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/acb29d4b6748c7ece286aa8e3e3e24ce/transformed/ui-text-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/b42245df475f6532412c9cfb91920365/transformed/ui-tooling-preview-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/e12ae982befe3bda45b367b3d81af6d0/transformed/ui-graphics-release/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.32.0] /home/ankit/.gradle/caches/8.9/transforms/be7bee8b63d6dfaf479232bd2502d4a7/transformed/accompanist-drawablepainter-0.32.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.compose.material:material-icons-extended-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/edc3602a01a6ca4db452da3ae7ec6525/transformed/material-icons-extended-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-core-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/49051b7679af7ccd520fbd30c4b19df6/transformed/material-icons-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/b86dda6e85524195fcdcb5ff207569d2/transformed/ui-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/2dc376e1a164a583f2bba3d44b721200/transformed/ui-tooling-release/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.activity:activity-compose:1.9.3] /home/ankit/.gradle/caches/8.9/transforms/13109cf80387b3c6769e082cca769d49/transformed/activity-compose-1.9.3/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity-ktx:1.9.3] /home/ankit/.gradle/caches/8.9/transforms/7799b04d6a9035594d1c1b5fd8fff946/transformed/activity-ktx-1.9.3/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity:1.9.3] /home/ankit/.gradle/caches/8.9/transforms/84f8abb9b22bdb3edc208297f080c1e6/transformed/activity-1.9.3/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/f241776f0c21b0111c2f981f3c0ba076/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /home/ankit/.gradle/caches/8.9/transforms/899bb0720f75485fbab1937e5fbe4cd5/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/ankit/.gradle/caches/8.9/transforms/45ced361dea100b240870cf1eb538bf9/transformed/emoji2-1.3.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/18bb448593024369b8dacb148c88ac7b/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/b40b3458d74a7b7ae834a58c27138bcb/transformed/lifecycle-viewmodel-2.8.7/AndroidManifest.xml:2:1-5:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/77a3c8d29bca5bca0678694803dfe1d4/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/8dc264895f60a6efc773ae39ca6707a0/transformed/lifecycle-livedata-core-ktx-2.8.7/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/ankit/.gradle/caches/8.9/transforms/95d31a583b064b3582e7d57092641e95/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/ankit/.gradle/caches/8.9/transforms/34246c6b0cded60d759b162d8e03e54b/transformed/savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/b5de8f491c955ffea721fe3a7491e362/transformed/lifecycle-runtime-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/e483f8045da1b88cc542fe433780cdb1/transformed/lifecycle-livedata-core-2.8.7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/bd18e7a19051cd0749f92847f2573cfb/transformed/lifecycle-viewmodel-ktx-2.8.7/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/376a03c3edacb5c3a2814a2b822f665b/transformed/lifecycle-viewmodel-savedstate-2.8.7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/ccc59fed0830e44147f8acc3104e9cb1/transformed/lifecycle-livedata-2.8.7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/64c3dce6ef651c805fcc341c0a86ef74/transformed/lifecycle-viewmodel-compose-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/66f1c0c43148c84b36cd3a3b3b0336f1/transformed/lifecycle-runtime-compose-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/338ceb457e0c02d3f6477e80616dc86c/transformed/lifecycle-runtime-ktx-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/44816d756d50bdc74d0a584e89ef4073/transformed/runtime-saveable-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/88aa6d20a2f19931c6f1865a4756caa3/transformed/runtime-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.datastore:datastore-core-android:1.1.1] /home/ankit/.gradle/caches/8.9/transforms/8921928ed39f711275c1f420ef7aa168/transformed/datastore-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.datastore:datastore-android:1.1.1] /home/ankit/.gradle/caches/8.9/transforms/819ff325cd98c2c39d2369b3a78c0402/transformed/datastore-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.datastore:datastore-preferences-android:1.1.1] /home/ankit/.gradle/caches/8.9/transforms/99550a71fc7b5f0abc6faa62a1ec2812/transformed/datastore-preferences-release/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /home/ankit/.gradle/caches/8.9/transforms/839662f3c94e84959e827c63a8cff573/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /home/ankit/.gradle/caches/8.9/transforms/6e4f0e5277f189ff17a0cae1ee8e6994/transformed/play-services-basement-18.4.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/e82aaae33a359dfebaf5c62b3024cc19/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.autofill:autofill:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/e56c417e770e77a10439cf05e84ca042/transformed/autofill-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.graphics:graphics-path:1.0.1] /home/ankit/.gradle/caches/8.9/transforms/a95468a99efb9c94229ac80838505b6c/transformed/graphics-path-1.0.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/a9ebee0fa01de968ec43ebed2bc72bf0/transformed/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/df9e508f460da7a8bf6430be183128a8/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/ankit/.gradle/caches/8.9/transforms/c93e6f70d2dda50a271f39e7c02d5ba1/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/ankit/.gradle/caches/8.9/transforms/3764dfffbf34845d6c3b6547d4e5a178/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.15.0] /home/ankit/.gradle/caches/8.9/transforms/278bc45da7b5ecf8a5980a149b3aaa41/transformed/core-1.15.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/b02ebd70c3305b7af60d7fb5a56641d9/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.core:core-ktx:1.15.0] /home/ankit/.gradle/caches/8.9/transforms/ddb0db531eaf3d84e291c7ce0a15edfa/transformed/core-ktx-1.15.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/c513627cc1a7ab7a0d0e8287ce850616/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/ankit/.gradle/caches/8.9/transforms/1ce6c8cc63b580c0cb2bdf72d3a1555c/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.2.0] /home/ankit/.gradle/caches/8.9/transforms/6220b26c3fc91623803a7e5b61a9dddd/transformed/tracing-1.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.tracing:tracing-ktx:1.2.0] /home/ankit/.gradle/caches/8.9/transforms/583f0da19a25805330ea6c510c34ebc8/transformed/tracing-ktx-1.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/032665c9b243ccf66e6592d8b7c258ba/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/ankit/.gradle/caches/8.9/transforms/c768c5c5a71acf26b35422401f44a5e8/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.firebase:firebase-components:18.0.0] /home/ankit/.gradle/caches/8.9/transforms/d7d06dc03cc5cf1a896c7958a1014e9b/transformed/firebase-components-18.0.0/AndroidManifest.xml:15:1-20:12
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /home/ankit/.gradle/caches/8.9/transforms/7108822f228257ac5ee048f13f82ce12/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:15:1-38:12
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /home/ankit/.gradle/caches/8.9/transforms/3fa0cf0597daa4d743977bd9ed65e16b/transformed/transport-runtime-2.2.6/AndroidManifest.xml:15:1-41:12
+MERGED from [com.google.android.datatransport:transport-api:2.2.1] /home/ankit/.gradle/caches/8.9/transforms/1726adf9dbdc25e321f6e73a7af0cdd2/transformed/transport-api-2.2.1/AndroidManifest.xml:15:1-22:12
+MERGED from [com.google.firebase:firebase-encoders-json:17.1.0] /home/ankit/.gradle/caches/8.9/transforms/9a554985fa126a7d7b7f69d01be7bec5/transformed/firebase-encoders-json-17.1.0/AndroidManifest.xml:15:1-23:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/ankit/.gradle/caches/8.9/transforms/5688b5dc51bb133f5955bcdbcdb8824e/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/e1eb3266bcf0effebbf5fd66d3ab5c00/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/75567a68b8d534b528734c3356102608/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.7] /home/ankit/.gradle/caches/8.9/transforms/2feb244bb7c963be13d0f777052be39a/transformed/exifinterface-1.3.7/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.libraries.identity.googleid:googleid:1.1.0] /home/ankit/.gradle/caches/8.9/transforms/057f3647ced2f93ea737d60e3621f064/transformed/googleid-1.1.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.dagger:dagger-lint-aar:2.53.1] /home/ankit/.gradle/caches/8.9/transforms/72246543746c581b21d90fee082963ec/transformed/dagger-lint-aar-2.53.1/AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /home/ankit/.gradle/caches/8.9/transforms/ec0daf4fbad47d285f9892d8b131b05f/transformed/image-1.0.0-beta1/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.play:core-common:2.0.3] /home/ankit/.gradle/caches/8.9/transforms/3c128c07b4a486b2690fbc4e04878b39/transformed/core-common-2.0.3/AndroidManifest.xml:2:1-21:12
+	package
+		INJECTED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:5:5-67
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:25:5-67
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:25:5-67
+MERGED from [com.google.android.recaptcha:recaptcha:18.5.1] /home/ankit/.gradle/caches/8.9/transforms/c801f87dec2ab4c392d4f6be4ea7c64e/transformed/recaptcha-18.5.1/AndroidManifest.xml:7:5-67
+MERGED from [com.google.android.recaptcha:recaptcha:18.5.1] /home/ankit/.gradle/caches/8.9/transforms/c801f87dec2ab4c392d4f6be4ea7c64e/transformed/recaptcha-18.5.1/AndroidManifest.xml:7:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /home/ankit/.gradle/caches/8.9/transforms/7108822f228257ac5ee048f13f82ce12/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:26:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /home/ankit/.gradle/caches/8.9/transforms/7108822f228257ac5ee048f13f82ce12/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:26:5-67
+	android:name
+		ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.CAMERA
+ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:6:5-65
+	android:name
+		ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:6:22-62
+uses-feature#android.hardware.camera
+ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:8:5-10:36
+	android:required
+		ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:10:9-33
+	android:name
+		ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:9:9-47
+application
+ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:12:5-31:19
+INJECTED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:12:5-31:19
+MERGED from [com.google.firebase:firebase-auth-ktx:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/54fea16fc17da32017d80a3a82cd9c2f/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:7:5-15:19
+MERGED from [com.google.firebase:firebase-auth-ktx:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/54fea16fc17da32017d80a3a82cd9c2f/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:7:5-15:19
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:28:5-73:19
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:28:5-73:19
+MERGED from [androidx.camera:camera-camera2:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/7e540c62827f789b95432550a84c043f/transformed/camera-camera2-1.4.1/AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.camera:camera-camera2:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/7e540c62827f789b95432550a84c043f/transformed/camera-camera2-1.4.1/AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.camera:camera-core:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/3a563e427ed515dfdbf7695592c1cff3/transformed/camera-core-1.4.1/AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.camera:camera-core:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/3a563e427ed515dfdbf7695592c1cff3/transformed/camera-core-1.4.1/AndroidManifest.xml:23:5-34:19
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.1] /home/ankit/.gradle/caches/8.9/transforms/4ea51e3fd4c3f7f74044a384cc347abf/transformed/play-services-mlkit-barcode-scanning-18.3.1/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.1] /home/ankit/.gradle/caches/8.9/transforms/4ea51e3fd4c3f7f74044a384cc347abf/transformed/play-services-mlkit-barcode-scanning-18.3.1/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.mlkit:vision-common:17.3.0] /home/ankit/.gradle/caches/8.9/transforms/10a2735cfe71961bdb814122d16a79f9/transformed/vision-common-17.3.0/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.mlkit:vision-common:17.3.0] /home/ankit/.gradle/caches/8.9/transforms/10a2735cfe71961bdb814122d16a79f9/transformed/vision-common-17.3.0/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.mlkit:common:18.11.0] /home/ankit/.gradle/caches/8.9/transforms/f601eb822793f68c30ec72a1ed42c743/transformed/common-18.11.0/AndroidManifest.xml:8:5-24:19
+MERGED from [com.google.mlkit:common:18.11.0] /home/ankit/.gradle/caches/8.9/transforms/f601eb822793f68c30ec72a1ed42c743/transformed/common-18.11.0/AndroidManifest.xml:8:5-24:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/8839528ec059ebb618b033b86eec43e2/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/8839528ec059ebb618b033b86eec43e2/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /home/ankit/.gradle/caches/8.9/transforms/2964d6af7adb8c9c5073b79cad6c1d76/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /home/ankit/.gradle/caches/8.9/transforms/2964d6af7adb8c9c5073b79cad6c1d76/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/9c7f34e5cb972aff26e843bf8e0c1424/transformed/firebase-common-21.0.0/AndroidManifest.xml:22:5-39:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/9c7f34e5cb972aff26e843bf8e0c1424/transformed/firebase-common-21.0.0/AndroidManifest.xml:22:5-39:19
+MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/ankit/.gradle/caches/8.9/transforms/202e45fe24bac5110a60589e60fad9a7/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:23:5-42:19
+MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/ankit/.gradle/caches/8.9/transforms/202e45fe24bac5110a60589e60fad9a7/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:23:5-42:19
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] /home/ankit/.gradle/caches/8.9/transforms/6cc92391ee296f4facedd968b70bed3a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] /home/ankit/.gradle/caches/8.9/transforms/6cc92391ee296f4facedd968b70bed3a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] /home/ankit/.gradle/caches/8.9/transforms/7c7fbab4d8f0046dfe66cbeeeb5faf60/transformed/firebase-appcheck-interop-17.0.0/AndroidManifest.xml:23:5-20
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] /home/ankit/.gradle/caches/8.9/transforms/7c7fbab4d8f0046dfe66cbeeeb5faf60/transformed/firebase-appcheck-interop-17.0.0/AndroidManifest.xml:23:5-20
+MERGED from [com.google.android.gms:play-services-fido:20.1.0] /home/ankit/.gradle/caches/8.9/transforms/ac5d44b94f9c7c21109cdc822562453a/transformed/play-services-fido-20.1.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-fido:20.1.0] /home/ankit/.gradle/caches/8.9/transforms/ac5d44b94f9c7c21109cdc822562453a/transformed/play-services-fido-20.1.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /home/ankit/.gradle/caches/8.9/transforms/936f6f7cac0b7ccc62179e467e1376de/transformed/play-services-base-18.5.0/AndroidManifest.xml:4:5-6:19
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /home/ankit/.gradle/caches/8.9/transforms/936f6f7cac0b7ccc62179e467e1376de/transformed/play-services-base-18.5.0/AndroidManifest.xml:4:5-6:19
+MERGED from [com.google.android.play:integrity:1.3.0] /home/ankit/.gradle/caches/8.9/transforms/7ff090a9cae65136f61e90bf3e0ca588/transformed/integrity-1.3.0/AndroidManifest.xml:5:5-6:19
+MERGED from [com.google.android.play:integrity:1.3.0] /home/ankit/.gradle/caches/8.9/transforms/7ff090a9cae65136f61e90bf3e0ca588/transformed/integrity-1.3.0/AndroidManifest.xml:5:5-6:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/2dc376e1a164a583f2bba3d44b721200/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/2dc376e1a164a583f2bba3d44b721200/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/ankit/.gradle/caches/8.9/transforms/45ced361dea100b240870cf1eb538bf9/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/ankit/.gradle/caches/8.9/transforms/45ced361dea100b240870cf1eb538bf9/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/18bb448593024369b8dacb148c88ac7b/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/18bb448593024369b8dacb148c88ac7b/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:23:5-33:19
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /home/ankit/.gradle/caches/8.9/transforms/839662f3c94e84959e827c63a8cff573/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:4:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /home/ankit/.gradle/caches/8.9/transforms/839662f3c94e84959e827c63a8cff573/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:4:5-20
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /home/ankit/.gradle/caches/8.9/transforms/6e4f0e5277f189ff17a0cae1ee8e6994/transformed/play-services-basement-18.4.0/AndroidManifest.xml:5:5-7:19
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /home/ankit/.gradle/caches/8.9/transforms/6e4f0e5277f189ff17a0cae1ee8e6994/transformed/play-services-basement-18.4.0/AndroidManifest.xml:5:5-7:19
+MERGED from [androidx.core:core:1.15.0] /home/ankit/.gradle/caches/8.9/transforms/278bc45da7b5ecf8a5980a149b3aaa41/transformed/core-1.15.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.15.0] /home/ankit/.gradle/caches/8.9/transforms/278bc45da7b5ecf8a5980a149b3aaa41/transformed/core-1.15.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/ankit/.gradle/caches/8.9/transforms/1ce6c8cc63b580c0cb2bdf72d3a1555c/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/ankit/.gradle/caches/8.9/transforms/1ce6c8cc63b580c0cb2bdf72d3a1555c/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/ankit/.gradle/caches/8.9/transforms/c768c5c5a71acf26b35422401f44a5e8/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/ankit/.gradle/caches/8.9/transforms/c768c5c5a71acf26b35422401f44a5e8/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /home/ankit/.gradle/caches/8.9/transforms/7108822f228257ac5ee048f13f82ce12/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /home/ankit/.gradle/caches/8.9/transforms/7108822f228257ac5ee048f13f82ce12/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /home/ankit/.gradle/caches/8.9/transforms/3fa0cf0597daa4d743977bd9ed65e16b/transformed/transport-runtime-2.2.6/AndroidManifest.xml:25:5-39:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /home/ankit/.gradle/caches/8.9/transforms/3fa0cf0597daa4d743977bd9ed65e16b/transformed/transport-runtime-2.2.6/AndroidManifest.xml:25:5-39:19
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /home/ankit/.gradle/caches/8.9/transforms/ec0daf4fbad47d285f9892d8b131b05f/transformed/image-1.0.0-beta1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /home/ankit/.gradle/caches/8.9/transforms/ec0daf4fbad47d285f9892d8b131b05f/transformed/image-1.0.0-beta1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.play:core-common:2.0.3] /home/ankit/.gradle/caches/8.9/transforms/3c128c07b4a486b2690fbc4e04878b39/transformed/core-common-2.0.3/AndroidManifest.xml:11:5-19:19
+MERGED from [com.google.android.play:core-common:2.0.3] /home/ankit/.gradle/caches/8.9/transforms/3c128c07b4a486b2690fbc4e04878b39/transformed/core-common-2.0.3/AndroidManifest.xml:11:5-19:19
+	android:extractNativeLibs
+		INJECTED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.15.0] /home/ankit/.gradle/caches/8.9/transforms/278bc45da7b5ecf8a5980a149b3aaa41/transformed/core-1.15.0/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:18:9-35
+	android:label
+		ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:16:9-41
+	android:roundIcon
+		ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:17:9-54
+	tools:targetApi
+		ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:21:9-29
+	android:icon
+		ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:15:9-43
+	android:allowBackup
+		ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:14:9-35
+	android:theme
+		ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:19:9-50
+	android:usesCleartextTraffic
+		ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:20:9-44
+	android:name
+		ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:13:9-32
+activity#com.authplatform.app.MainActivity
+ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:22:9-30:20
+	android:exported
+		ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:24:13-36
+	android:theme
+		ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:25:13-54
+	android:name
+		ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:23:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:26:13-29:29
+action#android.intent.action.MAIN
+ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:27:17-69
+	android:name
+		ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:27:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:28:17-77
+	android:name
+		ADDED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml:28:27-74
+uses-sdk
+INJECTED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml
+MERGED from [com.google.firebase:firebase-auth-ktx:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/54fea16fc17da32017d80a3a82cd9c2f/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-ktx:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/54fea16fc17da32017d80a3a82cd9c2f/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:21:5-23:151
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:21:5-23:151
+MERGED from [androidx.browser:browser:1.8.0] /home/ankit/.gradle/caches/8.9/transforms/cb609013bedcfbca269d9c65c059f5b3/transformed/browser-1.8.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.browser:browser:1.8.0] /home/ankit/.gradle/caches/8.9/transforms/cb609013bedcfbca269d9c65c059f5b3/transformed/browser-1.8.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-video:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/4c75ab0a45b496094c028496874ca1cf/transformed/camera-video-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-video:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/4c75ab0a45b496094c028496874ca1cf/transformed/camera-video-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-view:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/141a10ec4e90af41a09b7ff057e8a424/transformed/camera-view-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-view:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/141a10ec4e90af41a09b7ff057e8a424/transformed/camera-view-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-lifecycle:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/1e58dd774e4adbc408bef10ae2e410bd/transformed/camera-lifecycle-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-lifecycle:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/1e58dd774e4adbc408bef10ae2e410bd/transformed/camera-lifecycle-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-camera2:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/7e540c62827f789b95432550a84c043f/transformed/camera-camera2-1.4.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-camera2:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/7e540c62827f789b95432550a84c043f/transformed/camera-camera2-1.4.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-core:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/3a563e427ed515dfdbf7695592c1cff3/transformed/camera-core-1.4.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-core:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/3a563e427ed515dfdbf7695592c1cff3/transformed/camera-core-1.4.1/AndroidManifest.xml:21:5-44
+MERGED from [com.google.mlkit:barcode-scanning:17.3.0] /home/ankit/.gradle/caches/8.9/transforms/f4f87bb07247ae31520f95ea5167b924/transformed/barcode-scanning-17.3.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:barcode-scanning:17.3.0] /home/ankit/.gradle/caches/8.9/transforms/f4f87bb07247ae31520f95ea5167b924/transformed/barcode-scanning-17.3.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.1] /home/ankit/.gradle/caches/8.9/transforms/4ea51e3fd4c3f7f74044a384cc347abf/transformed/play-services-mlkit-barcode-scanning-18.3.1/AndroidManifest.xml:6:5-44
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.1] /home/ankit/.gradle/caches/8.9/transforms/4ea51e3fd4c3f7f74044a384cc347abf/transformed/play-services-mlkit-barcode-scanning-18.3.1/AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:barcode-scanning-common:17.0.0] /home/ankit/.gradle/caches/8.9/transforms/758c3789ea36090f0525a7a39b2d9c34/transformed/barcode-scanning-common-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:barcode-scanning-common:17.0.0] /home/ankit/.gradle/caches/8.9/transforms/758c3789ea36090f0525a7a39b2d9c34/transformed/barcode-scanning-common-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:vision-common:17.3.0] /home/ankit/.gradle/caches/8.9/transforms/10a2735cfe71961bdb814122d16a79f9/transformed/vision-common-17.3.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:vision-common:17.3.0] /home/ankit/.gradle/caches/8.9/transforms/10a2735cfe71961bdb814122d16a79f9/transformed/vision-common-17.3.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:common:18.11.0] /home/ankit/.gradle/caches/8.9/transforms/f601eb822793f68c30ec72a1ed42c743/transformed/common-18.11.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:common:18.11.0] /home/ankit/.gradle/caches/8.9/transforms/f601eb822793f68c30ec72a1ed42c743/transformed/common-18.11.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/8839528ec059ebb618b033b86eec43e2/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/8839528ec059ebb618b033b86eec43e2/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /home/ankit/.gradle/caches/8.9/transforms/2964d6af7adb8c9c5073b79cad6c1d76/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /home/ankit/.gradle/caches/8.9/transforms/2964d6af7adb8c9c5073b79cad6c1d76/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/9c7f34e5cb972aff26e843bf8e0c1424/transformed/firebase-common-21.0.0/AndroidManifest.xml:19:5-44
+MERGED from [com.google.firebase:firebase-common:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/9c7f34e5cb972aff26e843bf8e0c1424/transformed/firebase-common-21.0.0/AndroidManifest.xml:19:5-44
+MERGED from [androidx.credentials:credentials:1.2.0-rc01] /home/ankit/.gradle/caches/8.9/transforms/2d477e9b9e97a53ae7b21d5f72295fb7/transformed/credentials-1.2.0-rc01/AndroidManifest.xml:5:5-44
+MERGED from [androidx.credentials:credentials:1.2.0-rc01] /home/ankit/.gradle/caches/8.9/transforms/2d477e9b9e97a53ae7b21d5f72295fb7/transformed/credentials-1.2.0-rc01/AndroidManifest.xml:5:5-44
+MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/ankit/.gradle/caches/8.9/transforms/202e45fe24bac5110a60589e60fad9a7/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:21:5-44
+MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/ankit/.gradle/caches/8.9/transforms/202e45fe24bac5110a60589e60fad9a7/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:21:5-44
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] /home/ankit/.gradle/caches/8.9/transforms/6cc92391ee296f4facedd968b70bed3a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] /home/ankit/.gradle/caches/8.9/transforms/6cc92391ee296f4facedd968b70bed3a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.2] /home/ankit/.gradle/caches/8.9/transforms/0219f5a776bd984c2bd7a9b8a478408f/transformed/play-services-auth-api-phone-18.0.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.2] /home/ankit/.gradle/caches/8.9/transforms/0219f5a776bd984c2bd7a9b8a478408f/transformed/play-services-auth-api-phone-18.0.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] /home/ankit/.gradle/caches/8.9/transforms/7c7fbab4d8f0046dfe66cbeeeb5faf60/transformed/firebase-appcheck-interop-17.0.0/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] /home/ankit/.gradle/caches/8.9/transforms/7c7fbab4d8f0046dfe66cbeeeb5faf60/transformed/firebase-appcheck-interop-17.0.0/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.gms:play-services-fido:20.1.0] /home/ankit/.gradle/caches/8.9/transforms/ac5d44b94f9c7c21109cdc822562453a/transformed/play-services-fido-20.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-fido:20.1.0] /home/ankit/.gradle/caches/8.9/transforms/ac5d44b94f9c7c21109cdc822562453a/transformed/play-services-fido-20.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] /home/ankit/.gradle/caches/8.9/transforms/0861d11a3b493a36b4b534e204a1af55/transformed/play-services-auth-base-18.0.4/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] /home/ankit/.gradle/caches/8.9/transforms/0861d11a3b493a36b4b534e204a1af55/transformed/play-services-auth-base-18.0.4/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /home/ankit/.gradle/caches/8.9/transforms/936f6f7cac0b7ccc62179e467e1376de/transformed/play-services-base-18.5.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /home/ankit/.gradle/caches/8.9/transforms/936f6f7cac0b7ccc62179e467e1376de/transformed/play-services-base-18.5.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.mlkit:vision-interfaces:16.3.0] /home/ankit/.gradle/caches/8.9/transforms/6a2490c36298cdd10b608613707c184c/transformed/vision-interfaces-16.3.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:vision-interfaces:16.3.0] /home/ankit/.gradle/caches/8.9/transforms/6a2490c36298cdd10b608613707c184c/transformed/vision-interfaces-16.3.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.recaptcha:recaptcha:18.5.1] /home/ankit/.gradle/caches/8.9/transforms/c801f87dec2ab4c392d4f6be4ea7c64e/transformed/recaptcha-18.5.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.recaptcha:recaptcha:18.5.1] /home/ankit/.gradle/caches/8.9/transforms/c801f87dec2ab4c392d4f6be4ea7c64e/transformed/recaptcha-18.5.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.play:integrity:1.3.0] /home/ankit/.gradle/caches/8.9/transforms/7ff090a9cae65136f61e90bf3e0ca588/transformed/integrity-1.3.0/AndroidManifest.xml:4:5-44
+MERGED from [com.google.android.play:integrity:1.3.0] /home/ankit/.gradle/caches/8.9/transforms/7ff090a9cae65136f61e90bf3e0ca588/transformed/integrity-1.3.0/AndroidManifest.xml:4:5-44
+MERGED from [androidx.hilt:hilt-navigation-compose:1.2.0] /home/ankit/.gradle/caches/8.9/transforms/9512c7c1ec18610bcfc2a191a0820566/transformed/hilt-navigation-compose-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.hilt:hilt-navigation-compose:1.2.0] /home/ankit/.gradle/caches/8.9/transforms/9512c7c1ec18610bcfc2a191a0820566/transformed/hilt-navigation-compose-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.hilt:hilt-navigation:1.2.0] /home/ankit/.gradle/caches/8.9/transforms/94aaac34d03d0b5de2d272bb172ed97f/transformed/hilt-navigation-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.hilt:hilt-navigation:1.2.0] /home/ankit/.gradle/caches/8.9/transforms/94aaac34d03d0b5de2d272bb172ed97f/transformed/hilt-navigation-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-common:2.8.5] /home/ankit/.gradle/caches/8.9/transforms/a64acfdbd69124737b9c011d7f8a4795/transformed/navigation-common-2.8.5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common:2.8.5] /home/ankit/.gradle/caches/8.9/transforms/a64acfdbd69124737b9c011d7f8a4795/transformed/navigation-common-2.8.5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.8.5] /home/ankit/.gradle/caches/8.9/transforms/f2dcf0a68b230ebd6d2fc079d6ea9fb4/transformed/navigation-runtime-2.8.5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.8.5] /home/ankit/.gradle/caches/8.9/transforms/f2dcf0a68b230ebd6d2fc079d6ea9fb4/transformed/navigation-runtime-2.8.5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.8.5] /home/ankit/.gradle/caches/8.9/transforms/836014a23a0d0dff8be9438880c5578c/transformed/navigation-common-ktx-2.8.5/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.8.5] /home/ankit/.gradle/caches/8.9/transforms/836014a23a0d0dff8be9438880c5578c/transformed/navigation-common-ktx-2.8.5/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.8.5] /home/ankit/.gradle/caches/8.9/transforms/d1774567823faeb89d1b8e66339c2e92/transformed/navigation-runtime-ktx-2.8.5/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.8.5] /home/ankit/.gradle/caches/8.9/transforms/d1774567823faeb89d1b8e66339c2e92/transformed/navigation-runtime-ktx-2.8.5/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-compose:2.8.5] /home/ankit/.gradle/caches/8.9/transforms/4b1aace7c2375208a9fc922a18e973d9/transformed/navigation-compose-2.8.5/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-compose:2.8.5] /home/ankit/.gradle/caches/8.9/transforms/4b1aace7c2375208a9fc922a18e973d9/transformed/navigation-compose-2.8.5/AndroidManifest.xml:5:5-44
+MERGED from [com.google.dagger:hilt-android:2.53.1] /home/ankit/.gradle/caches/8.9/transforms/7efa31f0832a5c7fb59e11b91332ee00/transformed/hilt-android-2.53.1/AndroidManifest.xml:18:3-42
+MERGED from [com.google.dagger:hilt-android:2.53.1] /home/ankit/.gradle/caches/8.9/transforms/7efa31f0832a5c7fb59e11b91332ee00/transformed/hilt-android-2.53.1/AndroidManifest.xml:18:3-42
+MERGED from [io.coil-kt:coil-compose:2.7.0] /home/ankit/.gradle/caches/8.9/transforms/aa6c4d5901383e9e7c2c5f03080ccc9d/transformed/coil-compose-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose:2.7.0] /home/ankit/.gradle/caches/8.9/transforms/aa6c4d5901383e9e7c2c5f03080ccc9d/transformed/coil-compose-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose-base:2.7.0] /home/ankit/.gradle/caches/8.9/transforms/634026558fd37fb21f0804236bbae6e5/transformed/coil-compose-base-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose-base:2.7.0] /home/ankit/.gradle/caches/8.9/transforms/634026558fd37fb21f0804236bbae6e5/transformed/coil-compose-base-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil:2.7.0] /home/ankit/.gradle/caches/8.9/transforms/4368111367bf96910694ed4a3a9453cf/transformed/coil-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil:2.7.0] /home/ankit/.gradle/caches/8.9/transforms/4368111367bf96910694ed4a3a9453cf/transformed/coil-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-base:2.7.0] /home/ankit/.gradle/caches/8.9/transforms/ccb8f218e94d23b9c9cc27bed815b82c/transformed/coil-base-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-base:2.7.0] /home/ankit/.gradle/caches/8.9/transforms/ccb8f218e94d23b9c9cc27bed815b82c/transformed/coil-base-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/ankit/.gradle/caches/8.9/transforms/f4dc4ee59e101d23f608217c08b908e9/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/ankit/.gradle/caches/8.9/transforms/f4dc4ee59e101d23f608217c08b908e9/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /home/ankit/.gradle/caches/8.9/transforms/94bc9068d92a5c6a81af9e0e925b9604/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /home/ankit/.gradle/caches/8.9/transforms/94bc9068d92a5c6a81af9e0e925b9604/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.5.1] /home/ankit/.gradle/caches/8.9/transforms/b614cfe6d8025c6ce57898eac253085a/transformed/fragment-1.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.1] /home/ankit/.gradle/caches/8.9/transforms/b614cfe6d8025c6ce57898eac253085a/transformed/fragment-1.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.material3:material3-android:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/bb9152203169c3f87be51a504d1fc561/transformed/material3-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material3:material3-android:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/bb9152203169c3f87be51a504d1fc561/transformed/material3-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/0c21e09b2ad35c10ee50b886604e2e60/transformed/material-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/0c21e09b2ad35c10ee50b886604e2e60/transformed/material-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/b12f30b4790f9d1176dae6a5988d7b8c/transformed/animation-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/b12f30b4790f9d1176dae6a5988d7b8c/transformed/animation-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/7a84dc36618dc4fb94e4f421dad292c9/transformed/material-ripple-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/7a84dc36618dc4fb94e4f421dad292c9/transformed/material-ripple-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/953b288100f7d2a303edf57535cb6a60/transformed/animation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/953b288100f7d2a303edf57535cb6a60/transformed/animation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/041ee50a6b3dc5739d39ec30cb091ac8/transformed/foundation-layout-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/041ee50a6b3dc5739d39ec30cb091ac8/transformed/foundation-layout-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/fc1e0f140a6e7892f8959309deb84d1b/transformed/foundation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/fc1e0f140a6e7892f8959309deb84d1b/transformed/foundation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/33d9e5dda2b44d8e0bcdac16f6155bd1/transformed/ui-tooling-data-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/33d9e5dda2b44d8e0bcdac16f6155bd1/transformed/ui-tooling-data-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/1c851ff1e0d82dadf7ba5b80b3b17231/transformed/ui-unit-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/1c851ff1e0d82dadf7ba5b80b3b17231/transformed/ui-unit-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/ab544a39714900a47c3d9ae5a894b3fd/transformed/ui-geometry-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/ab544a39714900a47c3d9ae5a894b3fd/transformed/ui-geometry-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/401268629efc6452bd613e2cc255e6a4/transformed/ui-util-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/401268629efc6452bd613e2cc255e6a4/transformed/ui-util-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/acb29d4b6748c7ece286aa8e3e3e24ce/transformed/ui-text-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/acb29d4b6748c7ece286aa8e3e3e24ce/transformed/ui-text-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/b42245df475f6532412c9cfb91920365/transformed/ui-tooling-preview-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/b42245df475f6532412c9cfb91920365/transformed/ui-tooling-preview-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/e12ae982befe3bda45b367b3d81af6d0/transformed/ui-graphics-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/e12ae982befe3bda45b367b3d81af6d0/transformed/ui-graphics-release/AndroidManifest.xml:5:5-44
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.32.0] /home/ankit/.gradle/caches/8.9/transforms/be7bee8b63d6dfaf479232bd2502d4a7/transformed/accompanist-drawablepainter-0.32.0/AndroidManifest.xml:21:5-44
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.32.0] /home/ankit/.gradle/caches/8.9/transforms/be7bee8b63d6dfaf479232bd2502d4a7/transformed/accompanist-drawablepainter-0.32.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/edc3602a01a6ca4db452da3ae7ec6525/transformed/material-icons-extended-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/edc3602a01a6ca4db452da3ae7ec6525/transformed/material-icons-extended-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/49051b7679af7ccd520fbd30c4b19df6/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/49051b7679af7ccd520fbd30c4b19df6/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/b86dda6e85524195fcdcb5ff207569d2/transformed/ui-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/b86dda6e85524195fcdcb5ff207569d2/transformed/ui-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/2dc376e1a164a583f2bba3d44b721200/transformed/ui-tooling-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/2dc376e1a164a583f2bba3d44b721200/transformed/ui-tooling-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-compose:1.9.3] /home/ankit/.gradle/caches/8.9/transforms/13109cf80387b3c6769e082cca769d49/transformed/activity-compose-1.9.3/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-compose:1.9.3] /home/ankit/.gradle/caches/8.9/transforms/13109cf80387b3c6769e082cca769d49/transformed/activity-compose-1.9.3/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.9.3] /home/ankit/.gradle/caches/8.9/transforms/7799b04d6a9035594d1c1b5fd8fff946/transformed/activity-ktx-1.9.3/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.9.3] /home/ankit/.gradle/caches/8.9/transforms/7799b04d6a9035594d1c1b5fd8fff946/transformed/activity-ktx-1.9.3/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity:1.9.3] /home/ankit/.gradle/caches/8.9/transforms/84f8abb9b22bdb3edc208297f080c1e6/transformed/activity-1.9.3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.9.3] /home/ankit/.gradle/caches/8.9/transforms/84f8abb9b22bdb3edc208297f080c1e6/transformed/activity-1.9.3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/f241776f0c21b0111c2f981f3c0ba076/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/f241776f0c21b0111c2f981f3c0ba076/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /home/ankit/.gradle/caches/8.9/transforms/899bb0720f75485fbab1937e5fbe4cd5/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /home/ankit/.gradle/caches/8.9/transforms/899bb0720f75485fbab1937e5fbe4cd5/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/ankit/.gradle/caches/8.9/transforms/45ced361dea100b240870cf1eb538bf9/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/ankit/.gradle/caches/8.9/transforms/45ced361dea100b240870cf1eb538bf9/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/18bb448593024369b8dacb148c88ac7b/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/18bb448593024369b8dacb148c88ac7b/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/b40b3458d74a7b7ae834a58c27138bcb/transformed/lifecycle-viewmodel-2.8.7/AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/b40b3458d74a7b7ae834a58c27138bcb/transformed/lifecycle-viewmodel-2.8.7/AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/77a3c8d29bca5bca0678694803dfe1d4/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/77a3c8d29bca5bca0678694803dfe1d4/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/8dc264895f60a6efc773ae39ca6707a0/transformed/lifecycle-livedata-core-ktx-2.8.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/8dc264895f60a6efc773ae39ca6707a0/transformed/lifecycle-livedata-core-ktx-2.8.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/ankit/.gradle/caches/8.9/transforms/95d31a583b064b3582e7d57092641e95/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/ankit/.gradle/caches/8.9/transforms/95d31a583b064b3582e7d57092641e95/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/ankit/.gradle/caches/8.9/transforms/34246c6b0cded60d759b162d8e03e54b/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/ankit/.gradle/caches/8.9/transforms/34246c6b0cded60d759b162d8e03e54b/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/b5de8f491c955ffea721fe3a7491e362/transformed/lifecycle-runtime-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/b5de8f491c955ffea721fe3a7491e362/transformed/lifecycle-runtime-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/e483f8045da1b88cc542fe433780cdb1/transformed/lifecycle-livedata-core-2.8.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/e483f8045da1b88cc542fe433780cdb1/transformed/lifecycle-livedata-core-2.8.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/bd18e7a19051cd0749f92847f2573cfb/transformed/lifecycle-viewmodel-ktx-2.8.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/bd18e7a19051cd0749f92847f2573cfb/transformed/lifecycle-viewmodel-ktx-2.8.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/376a03c3edacb5c3a2814a2b822f665b/transformed/lifecycle-viewmodel-savedstate-2.8.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/376a03c3edacb5c3a2814a2b822f665b/transformed/lifecycle-viewmodel-savedstate-2.8.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/ccc59fed0830e44147f8acc3104e9cb1/transformed/lifecycle-livedata-2.8.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/ccc59fed0830e44147f8acc3104e9cb1/transformed/lifecycle-livedata-2.8.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/64c3dce6ef651c805fcc341c0a86ef74/transformed/lifecycle-viewmodel-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/64c3dce6ef651c805fcc341c0a86ef74/transformed/lifecycle-viewmodel-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/66f1c0c43148c84b36cd3a3b3b0336f1/transformed/lifecycle-runtime-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/66f1c0c43148c84b36cd3a3b3b0336f1/transformed/lifecycle-runtime-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/338ceb457e0c02d3f6477e80616dc86c/transformed/lifecycle-runtime-ktx-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/338ceb457e0c02d3f6477e80616dc86c/transformed/lifecycle-runtime-ktx-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/44816d756d50bdc74d0a584e89ef4073/transformed/runtime-saveable-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/44816d756d50bdc74d0a584e89ef4073/transformed/runtime-saveable-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/88aa6d20a2f19931c6f1865a4756caa3/transformed/runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/88aa6d20a2f19931c6f1865a4756caa3/transformed/runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.datastore:datastore-core-android:1.1.1] /home/ankit/.gradle/caches/8.9/transforms/8921928ed39f711275c1f420ef7aa168/transformed/datastore-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.datastore:datastore-core-android:1.1.1] /home/ankit/.gradle/caches/8.9/transforms/8921928ed39f711275c1f420ef7aa168/transformed/datastore-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.datastore:datastore-android:1.1.1] /home/ankit/.gradle/caches/8.9/transforms/819ff325cd98c2c39d2369b3a78c0402/transformed/datastore-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-android:1.1.1] /home/ankit/.gradle/caches/8.9/transforms/819ff325cd98c2c39d2369b3a78c0402/transformed/datastore-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-preferences-android:1.1.1] /home/ankit/.gradle/caches/8.9/transforms/99550a71fc7b5f0abc6faa62a1ec2812/transformed/datastore-preferences-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-preferences-android:1.1.1] /home/ankit/.gradle/caches/8.9/transforms/99550a71fc7b5f0abc6faa62a1ec2812/transformed/datastore-preferences-release/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /home/ankit/.gradle/caches/8.9/transforms/839662f3c94e84959e827c63a8cff573/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /home/ankit/.gradle/caches/8.9/transforms/839662f3c94e84959e827c63a8cff573/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /home/ankit/.gradle/caches/8.9/transforms/6e4f0e5277f189ff17a0cae1ee8e6994/transformed/play-services-basement-18.4.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /home/ankit/.gradle/caches/8.9/transforms/6e4f0e5277f189ff17a0cae1ee8e6994/transformed/play-services-basement-18.4.0/AndroidManifest.xml:3:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/e82aaae33a359dfebaf5c62b3024cc19/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/e82aaae33a359dfebaf5c62b3024cc19/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.autofill:autofill:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/e56c417e770e77a10439cf05e84ca042/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/e56c417e770e77a10439cf05e84ca042/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.graphics:graphics-path:1.0.1] /home/ankit/.gradle/caches/8.9/transforms/a95468a99efb9c94229ac80838505b6c/transformed/graphics-path-1.0.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.graphics:graphics-path:1.0.1] /home/ankit/.gradle/caches/8.9/transforms/a95468a99efb9c94229ac80838505b6c/transformed/graphics-path-1.0.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/a9ebee0fa01de968ec43ebed2bc72bf0/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/a9ebee0fa01de968ec43ebed2bc72bf0/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/df9e508f460da7a8bf6430be183128a8/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/df9e508f460da7a8bf6430be183128a8/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/ankit/.gradle/caches/8.9/transforms/c93e6f70d2dda50a271f39e7c02d5ba1/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/ankit/.gradle/caches/8.9/transforms/c93e6f70d2dda50a271f39e7c02d5ba1/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/ankit/.gradle/caches/8.9/transforms/3764dfffbf34845d6c3b6547d4e5a178/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/ankit/.gradle/caches/8.9/transforms/3764dfffbf34845d6c3b6547d4e5a178/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.15.0] /home/ankit/.gradle/caches/8.9/transforms/278bc45da7b5ecf8a5980a149b3aaa41/transformed/core-1.15.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.15.0] /home/ankit/.gradle/caches/8.9/transforms/278bc45da7b5ecf8a5980a149b3aaa41/transformed/core-1.15.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/b02ebd70c3305b7af60d7fb5a56641d9/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/b02ebd70c3305b7af60d7fb5a56641d9/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.core:core-ktx:1.15.0] /home/ankit/.gradle/caches/8.9/transforms/ddb0db531eaf3d84e291c7ce0a15edfa/transformed/core-ktx-1.15.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.15.0] /home/ankit/.gradle/caches/8.9/transforms/ddb0db531eaf3d84e291c7ce0a15edfa/transformed/core-ktx-1.15.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/c513627cc1a7ab7a0d0e8287ce850616/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/c513627cc1a7ab7a0d0e8287ce850616/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/ankit/.gradle/caches/8.9/transforms/1ce6c8cc63b580c0cb2bdf72d3a1555c/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/ankit/.gradle/caches/8.9/transforms/1ce6c8cc63b580c0cb2bdf72d3a1555c/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.2.0] /home/ankit/.gradle/caches/8.9/transforms/6220b26c3fc91623803a7e5b61a9dddd/transformed/tracing-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing:1.2.0] /home/ankit/.gradle/caches/8.9/transforms/6220b26c3fc91623803a7e5b61a9dddd/transformed/tracing-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing-ktx:1.2.0] /home/ankit/.gradle/caches/8.9/transforms/583f0da19a25805330ea6c510c34ebc8/transformed/tracing-ktx-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing-ktx:1.2.0] /home/ankit/.gradle/caches/8.9/transforms/583f0da19a25805330ea6c510c34ebc8/transformed/tracing-ktx-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/032665c9b243ccf66e6592d8b7c258ba/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/032665c9b243ccf66e6592d8b7c258ba/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/ankit/.gradle/caches/8.9/transforms/c768c5c5a71acf26b35422401f44a5e8/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/ankit/.gradle/caches/8.9/transforms/c768c5c5a71acf26b35422401f44a5e8/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-components:18.0.0] /home/ankit/.gradle/caches/8.9/transforms/d7d06dc03cc5cf1a896c7958a1014e9b/transformed/firebase-components-18.0.0/AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-components:18.0.0] /home/ankit/.gradle/caches/8.9/transforms/d7d06dc03cc5cf1a896c7958a1014e9b/transformed/firebase-components-18.0.0/AndroidManifest.xml:18:5-44
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /home/ankit/.gradle/caches/8.9/transforms/7108822f228257ac5ee048f13f82ce12/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /home/ankit/.gradle/caches/8.9/transforms/7108822f228257ac5ee048f13f82ce12/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /home/ankit/.gradle/caches/8.9/transforms/3fa0cf0597daa4d743977bd9ed65e16b/transformed/transport-runtime-2.2.6/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /home/ankit/.gradle/caches/8.9/transforms/3fa0cf0597daa4d743977bd9ed65e16b/transformed/transport-runtime-2.2.6/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-api:2.2.1] /home/ankit/.gradle/caches/8.9/transforms/1726adf9dbdc25e321f6e73a7af0cdd2/transformed/transport-api-2.2.1/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-api:2.2.1] /home/ankit/.gradle/caches/8.9/transforms/1726adf9dbdc25e321f6e73a7af0cdd2/transformed/transport-api-2.2.1/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-encoders-json:17.1.0] /home/ankit/.gradle/caches/8.9/transforms/9a554985fa126a7d7b7f69d01be7bec5/transformed/firebase-encoders-json-17.1.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-encoders-json:17.1.0] /home/ankit/.gradle/caches/8.9/transforms/9a554985fa126a7d7b7f69d01be7bec5/transformed/firebase-encoders-json-17.1.0/AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/ankit/.gradle/caches/8.9/transforms/5688b5dc51bb133f5955bcdbcdb8824e/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/ankit/.gradle/caches/8.9/transforms/5688b5dc51bb133f5955bcdbcdb8824e/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/e1eb3266bcf0effebbf5fd66d3ab5c00/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/e1eb3266bcf0effebbf5fd66d3ab5c00/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/75567a68b8d534b528734c3356102608/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/ankit/.gradle/caches/8.9/transforms/75567a68b8d534b528734c3356102608/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.3.7] /home/ankit/.gradle/caches/8.9/transforms/2feb244bb7c963be13d0f777052be39a/transformed/exifinterface-1.3.7/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.7] /home/ankit/.gradle/caches/8.9/transforms/2feb244bb7c963be13d0f777052be39a/transformed/exifinterface-1.3.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.libraries.identity.googleid:googleid:1.1.0] /home/ankit/.gradle/caches/8.9/transforms/057f3647ced2f93ea737d60e3621f064/transformed/googleid-1.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.libraries.identity.googleid:googleid:1.1.0] /home/ankit/.gradle/caches/8.9/transforms/057f3647ced2f93ea737d60e3621f064/transformed/googleid-1.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.dagger:dagger-lint-aar:2.53.1] /home/ankit/.gradle/caches/8.9/transforms/72246543746c581b21d90fee082963ec/transformed/dagger-lint-aar-2.53.1/AndroidManifest.xml:18:3-42
+MERGED from [com.google.dagger:dagger-lint-aar:2.53.1] /home/ankit/.gradle/caches/8.9/transforms/72246543746c581b21d90fee082963ec/transformed/dagger-lint-aar-2.53.1/AndroidManifest.xml:18:3-42
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /home/ankit/.gradle/caches/8.9/transforms/ec0daf4fbad47d285f9892d8b131b05f/transformed/image-1.0.0-beta1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /home/ankit/.gradle/caches/8.9/transforms/ec0daf4fbad47d285f9892d8b131b05f/transformed/image-1.0.0-beta1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.play:core-common:2.0.3] /home/ankit/.gradle/caches/8.9/transforms/3c128c07b4a486b2690fbc4e04878b39/transformed/core-common-2.0.3/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.play:core-common:2.0.3] /home/ankit/.gradle/caches/8.9/transforms/3c128c07b4a486b2690fbc4e04878b39/transformed/core-common-2.0.3/AndroidManifest.xml:7:5-9:41
+	tools:overrideLibrary
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:23:9-148
+	android:targetSdkVersion
+		INJECTED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/ankit/Desktop/auth/android/app/src/main/AndroidManifest.xml
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.firebase:firebase-auth-ktx:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/54fea16fc17da32017d80a3a82cd9c2f/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:8:9-14:19
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:66:9-72:19
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:66:9-72:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/8839528ec059ebb618b033b86eec43e2/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/8839528ec059ebb618b033b86eec43e2/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/9c7f34e5cb972aff26e843bf8e0c1424/transformed/firebase-common-21.0.0/AndroidManifest.xml:30:9-38:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/9c7f34e5cb972aff26e843bf8e0c1424/transformed/firebase-common-21.0.0/AndroidManifest.xml:30:9-38:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth-ktx:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/54fea16fc17da32017d80a3a82cd9c2f/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:10:13-37
+	tools:targetApi
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/9c7f34e5cb972aff26e843bf8e0c1424/transformed/firebase-common-21.0.0/AndroidManifest.xml:34:13-32
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/9c7f34e5cb972aff26e843bf8e0c1424/transformed/firebase-common-21.0.0/AndroidManifest.xml:32:13-43
+	android:name
+		ADDED from [com.google.firebase:firebase-auth-ktx:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/54fea16fc17da32017d80a3a82cd9c2f/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:9:13-84
+meta-data#com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthLegacyRegistrar
+ADDED from [com.google.firebase:firebase-auth-ktx:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/54fea16fc17da32017d80a3a82cd9c2f/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:11:13-13:85
+	android:value
+		ADDED from [com.google.firebase:firebase-auth-ktx:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/54fea16fc17da32017d80a3a82cd9c2f/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:13:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-auth-ktx:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/54fea16fc17da32017d80a3a82cd9c2f/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:12:17-119
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.recaptcha:recaptcha:18.5.1] /home/ankit/.gradle/caches/8.9/transforms/c801f87dec2ab4c392d4f6be4ea7c64e/transformed/recaptcha-18.5.1/AndroidManifest.xml:8:5-79
+MERGED from [com.google.android.recaptcha:recaptcha:18.5.1] /home/ankit/.gradle/caches/8.9/transforms/c801f87dec2ab4c392d4f6be4ea7c64e/transformed/recaptcha-18.5.1/AndroidManifest.xml:8:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /home/ankit/.gradle/caches/8.9/transforms/7108822f228257ac5ee048f13f82ce12/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /home/ankit/.gradle/caches/8.9/transforms/7108822f228257ac5ee048f13f82ce12/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /home/ankit/.gradle/caches/8.9/transforms/3fa0cf0597daa4d743977bd9ed65e16b/transformed/transport-runtime-2.2.6/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /home/ankit/.gradle/caches/8.9/transforms/3fa0cf0597daa4d743977bd9ed65e16b/transformed/transport-runtime-2.2.6/AndroidManifest.xml:22:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:26:22-76
+activity#com.google.firebase.auth.internal.GenericIdpActivity
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:29:9-46:20
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:31:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:33:13-44
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:32:13-36
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:34:13-72
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:30:13-80
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:genericidp
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:35:13-45:29
+action#android.intent.action.VIEW
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:17-69
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:25-66
+category#android.intent.category.DEFAULT
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:17-76
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:27-73
+category#android.intent.category.BROWSABLE
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:17-78
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:27-75
+data
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:41:17-44:51
+	android:path
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:43:21-37
+	android:host
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:42:21-49
+	android:scheme
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:44:21-48
+activity#com.google.firebase.auth.internal.RecaptchaActivity
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:47:9-64:20
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:49:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:51:13-44
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:50:13-36
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:52:13-72
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:48:13-79
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:recaptcha
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:53:13-63:29
+meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:69:13-71:85
+	android:value
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:71:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /home/ankit/.gradle/caches/8.9/transforms/6ab453e389fe8e322213154a766bf3d7/transformed/firebase-auth-23.1.0/AndroidManifest.xml:70:17-109
+service#androidx.camera.core.impl.MetadataHolderService
+ADDED from [androidx.camera:camera-camera2:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/7e540c62827f789b95432550a84c043f/transformed/camera-camera2-1.4.1/AndroidManifest.xml:24:9-33:19
+MERGED from [androidx.camera:camera-core:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/3a563e427ed515dfdbf7695592c1cff3/transformed/camera-core-1.4.1/AndroidManifest.xml:29:9-33:78
+MERGED from [androidx.camera:camera-core:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/3a563e427ed515dfdbf7695592c1cff3/transformed/camera-core-1.4.1/AndroidManifest.xml:29:9-33:78
+	tools:node
+		ADDED from [androidx.camera:camera-camera2:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/7e540c62827f789b95432550a84c043f/transformed/camera-camera2-1.4.1/AndroidManifest.xml:29:13-31
+	android:enabled
+		ADDED from [androidx.camera:camera-camera2:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/7e540c62827f789b95432550a84c043f/transformed/camera-camera2-1.4.1/AndroidManifest.xml:26:13-36
+	android:exported
+		ADDED from [androidx.camera:camera-camera2:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/7e540c62827f789b95432550a84c043f/transformed/camera-camera2-1.4.1/AndroidManifest.xml:27:13-37
+	tools:ignore
+		ADDED from [androidx.camera:camera-camera2:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/7e540c62827f789b95432550a84c043f/transformed/camera-camera2-1.4.1/AndroidManifest.xml:28:13-75
+	android:name
+		ADDED from [androidx.camera:camera-camera2:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/7e540c62827f789b95432550a84c043f/transformed/camera-camera2-1.4.1/AndroidManifest.xml:25:13-75
+meta-data#androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER
+ADDED from [androidx.camera:camera-camera2:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/7e540c62827f789b95432550a84c043f/transformed/camera-camera2-1.4.1/AndroidManifest.xml:30:13-32:89
+	android:value
+		ADDED from [androidx.camera:camera-camera2:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/7e540c62827f789b95432550a84c043f/transformed/camera-camera2-1.4.1/AndroidManifest.xml:32:17-86
+	android:name
+		ADDED from [androidx.camera:camera-camera2:1.4.1] /home/ankit/.gradle/caches/8.9/transforms/7e540c62827f789b95432550a84c043f/transformed/camera-camera2-1.4.1/AndroidManifest.xml:31:17-103
+service#com.google.mlkit.common.internal.MlKitComponentDiscoveryService
+ADDED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.1] /home/ankit/.gradle/caches/8.9/transforms/4ea51e3fd4c3f7f74044a384cc347abf/transformed/play-services-mlkit-barcode-scanning-18.3.1/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.mlkit:vision-common:17.3.0] /home/ankit/.gradle/caches/8.9/transforms/10a2735cfe71961bdb814122d16a79f9/transformed/vision-common-17.3.0/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.mlkit:vision-common:17.3.0] /home/ankit/.gradle/caches/8.9/transforms/10a2735cfe71961bdb814122d16a79f9/transformed/vision-common-17.3.0/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.mlkit:common:18.11.0] /home/ankit/.gradle/caches/8.9/transforms/f601eb822793f68c30ec72a1ed42c743/transformed/common-18.11.0/AndroidManifest.xml:15:9-23:19
+MERGED from [com.google.mlkit:common:18.11.0] /home/ankit/.gradle/caches/8.9/transforms/f601eb822793f68c30ec72a1ed42c743/transformed/common-18.11.0/AndroidManifest.xml:15:9-23:19
+	android:exported
+		ADDED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.1] /home/ankit/.gradle/caches/8.9/transforms/4ea51e3fd4c3f7f74044a384cc347abf/transformed/play-services-mlkit-barcode-scanning-18.3.1/AndroidManifest.xml:11:13-37
+	tools:targetApi
+		ADDED from [com.google.mlkit:common:18.11.0] /home/ankit/.gradle/caches/8.9/transforms/f601eb822793f68c30ec72a1ed42c743/transformed/common-18.11.0/AndroidManifest.xml:19:13-32
+	android:directBootAware
+		ADDED from [com.google.mlkit:common:18.11.0] /home/ankit/.gradle/caches/8.9/transforms/f601eb822793f68c30ec72a1ed42c743/transformed/common-18.11.0/AndroidManifest.xml:17:13-43
+	android:name
+		ADDED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.1] /home/ankit/.gradle/caches/8.9/transforms/4ea51e3fd4c3f7f74044a384cc347abf/transformed/play-services-mlkit-barcode-scanning-18.3.1/AndroidManifest.xml:10:13-91
+meta-data#com.google.firebase.components:com.google.mlkit.vision.barcode.internal.BarcodeRegistrar
+ADDED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.1] /home/ankit/.gradle/caches/8.9/transforms/4ea51e3fd4c3f7f74044a384cc347abf/transformed/play-services-mlkit-barcode-scanning-18.3.1/AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.1] /home/ankit/.gradle/caches/8.9/transforms/4ea51e3fd4c3f7f74044a384cc347abf/transformed/play-services-mlkit-barcode-scanning-18.3.1/AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.1] /home/ankit/.gradle/caches/8.9/transforms/4ea51e3fd4c3f7f74044a384cc347abf/transformed/play-services-mlkit-barcode-scanning-18.3.1/AndroidManifest.xml:13:17-120
+meta-data#com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar
+ADDED from [com.google.mlkit:vision-common:17.3.0] /home/ankit/.gradle/caches/8.9/transforms/10a2735cfe71961bdb814122d16a79f9/transformed/vision-common-17.3.0/AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.mlkit:vision-common:17.3.0] /home/ankit/.gradle/caches/8.9/transforms/10a2735cfe71961bdb814122d16a79f9/transformed/vision-common-17.3.0/AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.mlkit:vision-common:17.3.0] /home/ankit/.gradle/caches/8.9/transforms/10a2735cfe71961bdb814122d16a79f9/transformed/vision-common-17.3.0/AndroidManifest.xml:13:17-124
+provider#com.google.mlkit.common.internal.MlKitInitProvider
+ADDED from [com.google.mlkit:common:18.11.0] /home/ankit/.gradle/caches/8.9/transforms/f601eb822793f68c30ec72a1ed42c743/transformed/common-18.11.0/AndroidManifest.xml:9:9-13:38
+	android:authorities
+		ADDED from [com.google.mlkit:common:18.11.0] /home/ankit/.gradle/caches/8.9/transforms/f601eb822793f68c30ec72a1ed42c743/transformed/common-18.11.0/AndroidManifest.xml:11:13-69
+	android:exported
+		ADDED from [com.google.mlkit:common:18.11.0] /home/ankit/.gradle/caches/8.9/transforms/f601eb822793f68c30ec72a1ed42c743/transformed/common-18.11.0/AndroidManifest.xml:12:13-37
+	android:initOrder
+		ADDED from [com.google.mlkit:common:18.11.0] /home/ankit/.gradle/caches/8.9/transforms/f601eb822793f68c30ec72a1ed42c743/transformed/common-18.11.0/AndroidManifest.xml:13:13-35
+	android:name
+		ADDED from [com.google.mlkit:common:18.11.0] /home/ankit/.gradle/caches/8.9/transforms/f601eb822793f68c30ec72a1ed42c743/transformed/common-18.11.0/AndroidManifest.xml:10:13-78
+meta-data#com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar
+ADDED from [com.google.mlkit:common:18.11.0] /home/ankit/.gradle/caches/8.9/transforms/f601eb822793f68c30ec72a1ed42c743/transformed/common-18.11.0/AndroidManifest.xml:20:13-22:85
+	android:value
+		ADDED from [com.google.mlkit:common:18.11.0] /home/ankit/.gradle/caches/8.9/transforms/f601eb822793f68c30ec72a1ed42c743/transformed/common-18.11.0/AndroidManifest.xml:22:17-82
+	android:name
+		ADDED from [com.google.mlkit:common:18.11.0] /home/ankit/.gradle/caches/8.9/transforms/f601eb822793f68c30ec72a1ed42c743/transformed/common-18.11.0/AndroidManifest.xml:21:17-120
+meta-data#com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar
+ADDED from [com.google.firebase:firebase-common-ktx:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/8839528ec059ebb618b033b86eec43e2/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.firebase:firebase-common-ktx:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/8839528ec059ebb618b033b86eec43e2/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-common-ktx:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/8839528ec059ebb618b033b86eec43e2/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:13:17-116
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/9c7f34e5cb972aff26e843bf8e0c1424/transformed/firebase-common-21.0.0/AndroidManifest.xml:23:9-28:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/9c7f34e5cb972aff26e843bf8e0c1424/transformed/firebase-common-21.0.0/AndroidManifest.xml:25:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/9c7f34e5cb972aff26e843bf8e0c1424/transformed/firebase-common-21.0.0/AndroidManifest.xml:27:13-37
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/9c7f34e5cb972aff26e843bf8e0c1424/transformed/firebase-common-21.0.0/AndroidManifest.xml:26:13-43
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/9c7f34e5cb972aff26e843bf8e0c1424/transformed/firebase-common-21.0.0/AndroidManifest.xml:28:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/9c7f34e5cb972aff26e843bf8e0c1424/transformed/firebase-common-21.0.0/AndroidManifest.xml:24:13-77
+meta-data#com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar
+ADDED from [com.google.firebase:firebase-common:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/9c7f34e5cb972aff26e843bf8e0c1424/transformed/firebase-common-21.0.0/AndroidManifest.xml:35:13-37:85
+	android:value
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/9c7f34e5cb972aff26e843bf8e0c1424/transformed/firebase-common-21.0.0/AndroidManifest.xml:37:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /home/ankit/.gradle/caches/8.9/transforms/9c7f34e5cb972aff26e843bf8e0c1424/transformed/firebase-common-21.0.0/AndroidManifest.xml:36:17-109
+service#androidx.credentials.playservices.CredentialProviderMetadataHolder
+ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/ankit/.gradle/caches/8.9/transforms/202e45fe24bac5110a60589e60fad9a7/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:24:9-32:19
+	android:enabled
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/ankit/.gradle/caches/8.9/transforms/202e45fe24bac5110a60589e60fad9a7/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:26:13-35
+	android:exported
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/ankit/.gradle/caches/8.9/transforms/202e45fe24bac5110a60589e60fad9a7/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:27:13-37
+	tools:ignore
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/ankit/.gradle/caches/8.9/transforms/202e45fe24bac5110a60589e60fad9a7/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:28:13-60
+	android:name
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/ankit/.gradle/caches/8.9/transforms/202e45fe24bac5110a60589e60fad9a7/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:25:13-94
+meta-data#androidx.credentials.CREDENTIAL_PROVIDER_KEY
+ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/ankit/.gradle/caches/8.9/transforms/202e45fe24bac5110a60589e60fad9a7/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:29:13-31:104
+	android:value
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/ankit/.gradle/caches/8.9/transforms/202e45fe24bac5110a60589e60fad9a7/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:31:17-101
+	android:name
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/ankit/.gradle/caches/8.9/transforms/202e45fe24bac5110a60589e60fad9a7/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:30:17-76
+activity#androidx.credentials.playservices.HiddenActivity
+ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/ankit/.gradle/caches/8.9/transforms/202e45fe24bac5110a60589e60fad9a7/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:34:9-41:20
+	android:fitsSystemWindows
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/ankit/.gradle/caches/8.9/transforms/202e45fe24bac5110a60589e60fad9a7/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:39:13-45
+	android:enabled
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/ankit/.gradle/caches/8.9/transforms/202e45fe24bac5110a60589e60fad9a7/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/ankit/.gradle/caches/8.9/transforms/202e45fe24bac5110a60589e60fad9a7/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:38:13-37
+	android:configChanges
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/ankit/.gradle/caches/8.9/transforms/202e45fe24bac5110a60589e60fad9a7/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:36:13-87
+	android:theme
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/ankit/.gradle/caches/8.9/transforms/202e45fe24bac5110a60589e60fad9a7/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:40:13-48
+	android:name
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/ankit/.gradle/caches/8.9/transforms/202e45fe24bac5110a60589e60fad9a7/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:35:13-76
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:20.7.0] /home/ankit/.gradle/caches/8.9/transforms/6cc92391ee296f4facedd968b70bed3a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /home/ankit/.gradle/caches/8.9/transforms/6cc92391ee296f4facedd968b70bed3a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /home/ankit/.gradle/caches/8.9/transforms/6cc92391ee296f4facedd968b70bed3a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /home/ankit/.gradle/caches/8.9/transforms/6cc92391ee296f4facedd968b70bed3a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /home/ankit/.gradle/caches/8.9/transforms/6cc92391ee296f4facedd968b70bed3a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:20.7.0] /home/ankit/.gradle/caches/8.9/transforms/6cc92391ee296f4facedd968b70bed3a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /home/ankit/.gradle/caches/8.9/transforms/6cc92391ee296f4facedd968b70bed3a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
+	android:visibleToInstantApps
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /home/ankit/.gradle/caches/8.9/transforms/6cc92391ee296f4facedd968b70bed3a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /home/ankit/.gradle/caches/8.9/transforms/6cc92391ee296f4facedd968b70bed3a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /home/ankit/.gradle/caches/8.9/transforms/6cc92391ee296f4facedd968b70bed3a/transformed/play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.5.0] /home/ankit/.gradle/caches/8.9/transforms/936f6f7cac0b7ccc62179e467e1376de/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:9-173
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] /home/ankit/.gradle/caches/8.9/transforms/936f6f7cac0b7ccc62179e467e1376de/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] /home/ankit/.gradle/caches/8.9/transforms/936f6f7cac0b7ccc62179e467e1376de/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] /home/ankit/.gradle/caches/8.9/transforms/936f6f7cac0b7ccc62179e467e1376de/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:19-85
+uses-permission#com.google.android.providers.gsf.permission.READ_GSERVICES
+ADDED from [com.google.android.recaptcha:recaptcha:18.5.1] /home/ankit/.gradle/caches/8.9/transforms/c801f87dec2ab4c392d4f6be4ea7c64e/transformed/recaptcha-18.5.1/AndroidManifest.xml:9:5-98
+	android:name
+		ADDED from [com.google.android.recaptcha:recaptcha:18.5.1] /home/ankit/.gradle/caches/8.9/transforms/c801f87dec2ab4c392d4f6be4ea7c64e/transformed/recaptcha-18.5.1/AndroidManifest.xml:9:22-95
+activity#androidx.compose.ui.tooling.PreviewActivity
+ADDED from [androidx.compose.ui:ui-tooling-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/2dc376e1a164a583f2bba3d44b721200/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/2dc376e1a164a583f2bba3d44b721200/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.7.6] /home/ankit/.gradle/caches/8.9/transforms/2dc376e1a164a583f2bba3d44b721200/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.3.0] /home/ankit/.gradle/caches/8.9/transforms/45ced361dea100b240870cf1eb538bf9/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/18bb448593024369b8dacb148c88ac7b/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/18bb448593024369b8dacb148c88ac7b/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/ankit/.gradle/caches/8.9/transforms/1ce6c8cc63b580c0cb2bdf72d3a1555c/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/ankit/.gradle/caches/8.9/transforms/1ce6c8cc63b580c0cb2bdf72d3a1555c/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/ankit/.gradle/caches/8.9/transforms/45ced361dea100b240870cf1eb538bf9/transformed/emoji2-1.3.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/ankit/.gradle/caches/8.9/transforms/45ced361dea100b240870cf1eb538bf9/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/ankit/.gradle/caches/8.9/transforms/45ced361dea100b240870cf1eb538bf9/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/ankit/.gradle/caches/8.9/transforms/45ced361dea100b240870cf1eb538bf9/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.3.0] /home/ankit/.gradle/caches/8.9/transforms/45ced361dea100b240870cf1eb538bf9/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/ankit/.gradle/caches/8.9/transforms/45ced361dea100b240870cf1eb538bf9/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/ankit/.gradle/caches/8.9/transforms/45ced361dea100b240870cf1eb538bf9/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/18bb448593024369b8dacb148c88ac7b/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/18bb448593024369b8dacb148c88ac7b/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.7] /home/ankit/.gradle/caches/8.9/transforms/18bb448593024369b8dacb148c88ac7b/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:30:17-78
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:18.4.0] /home/ankit/.gradle/caches/8.9/transforms/6e4f0e5277f189ff17a0cae1ee8e6994/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:18.4.0] /home/ankit/.gradle/caches/8.9/transforms/6e4f0e5277f189ff17a0cae1ee8e6994/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:18.4.0] /home/ankit/.gradle/caches/8.9/transforms/6e4f0e5277f189ff17a0cae1ee8e6994/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.15.0] /home/ankit/.gradle/caches/8.9/transforms/278bc45da7b5ecf8a5980a149b3aaa41/transformed/core-1.15.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.15.0] /home/ankit/.gradle/caches/8.9/transforms/278bc45da7b5ecf8a5980a149b3aaa41/transformed/core-1.15.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.15.0] /home/ankit/.gradle/caches/8.9/transforms/278bc45da7b5ecf8a5980a149b3aaa41/transformed/core-1.15.0/AndroidManifest.xml:23:9-81
+permission#com.authplatform.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.15.0] /home/ankit/.gradle/caches/8.9/transforms/278bc45da7b5ecf8a5980a149b3aaa41/transformed/core-1.15.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.15.0] /home/ankit/.gradle/caches/8.9/transforms/278bc45da7b5ecf8a5980a149b3aaa41/transformed/core-1.15.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.15.0] /home/ankit/.gradle/caches/8.9/transforms/278bc45da7b5ecf8a5980a149b3aaa41/transformed/core-1.15.0/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.15.0] /home/ankit/.gradle/caches/8.9/transforms/278bc45da7b5ecf8a5980a149b3aaa41/transformed/core-1.15.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.15.0] /home/ankit/.gradle/caches/8.9/transforms/278bc45da7b5ecf8a5980a149b3aaa41/transformed/core-1.15.0/AndroidManifest.xml:26:22-94
+uses-permission#com.authplatform.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.15.0] /home/ankit/.gradle/caches/8.9/transforms/278bc45da7b5ecf8a5980a149b3aaa41/transformed/core-1.15.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.15.0] /home/ankit/.gradle/caches/8.9/transforms/278bc45da7b5ecf8a5980a149b3aaa41/transformed/core-1.15.0/AndroidManifest.xml:26:22-94
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/ankit/.gradle/caches/8.9/transforms/1ef30a2e6a9a370b0af8f6740a435dad/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+service#com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
+ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /home/ankit/.gradle/caches/8.9/transforms/7108822f228257ac5ee048f13f82ce12/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /home/ankit/.gradle/caches/8.9/transforms/3fa0cf0597daa4d743977bd9ed65e16b/transformed/transport-runtime-2.2.6/AndroidManifest.xml:36:9-38:40
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /home/ankit/.gradle/caches/8.9/transforms/3fa0cf0597daa4d743977bd9ed65e16b/transformed/transport-runtime-2.2.6/AndroidManifest.xml:36:9-38:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /home/ankit/.gradle/caches/8.9/transforms/7108822f228257ac5ee048f13f82ce12/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:31:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /home/ankit/.gradle/caches/8.9/transforms/7108822f228257ac5ee048f13f82ce12/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:30:13-103
+meta-data#backend:com.google.android.datatransport.cct.CctBackendFactory
+ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /home/ankit/.gradle/caches/8.9/transforms/7108822f228257ac5ee048f13f82ce12/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:32:13-34:39
+	android:value
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /home/ankit/.gradle/caches/8.9/transforms/7108822f228257ac5ee048f13f82ce12/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:34:17-36
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /home/ankit/.gradle/caches/8.9/transforms/7108822f228257ac5ee048f13f82ce12/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:33:17-94
+service#com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService
+ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /home/ankit/.gradle/caches/8.9/transforms/3fa0cf0597daa4d743977bd9ed65e16b/transformed/transport-runtime-2.2.6/AndroidManifest.xml:26:9-30:19
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /home/ankit/.gradle/caches/8.9/transforms/3fa0cf0597daa4d743977bd9ed65e16b/transformed/transport-runtime-2.2.6/AndroidManifest.xml:28:13-37
+	android:permission
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /home/ankit/.gradle/caches/8.9/transforms/3fa0cf0597daa4d743977bd9ed65e16b/transformed/transport-runtime-2.2.6/AndroidManifest.xml:29:13-69
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /home/ankit/.gradle/caches/8.9/transforms/3fa0cf0597daa4d743977bd9ed65e16b/transformed/transport-runtime-2.2.6/AndroidManifest.xml:27:13-117
+receiver#com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver
+ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /home/ankit/.gradle/caches/8.9/transforms/3fa0cf0597daa4d743977bd9ed65e16b/transformed/transport-runtime-2.2.6/AndroidManifest.xml:32:9-34:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /home/ankit/.gradle/caches/8.9/transforms/3fa0cf0597daa4d743977bd9ed65e16b/transformed/transport-runtime-2.2.6/AndroidManifest.xml:34:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /home/ankit/.gradle/caches/8.9/transforms/3fa0cf0597daa4d743977bd9ed65e16b/transformed/transport-runtime-2.2.6/AndroidManifest.xml:33:13-132
+activity#com.google.android.play.core.common.PlayCoreDialogWrapperActivity
+ADDED from [com.google.android.play:core-common:2.0.3] /home/ankit/.gradle/caches/8.9/transforms/3c128c07b4a486b2690fbc4e04878b39/transformed/core-common-2.0.3/AndroidManifest.xml:14:9-18:65
+	android:stateNotNeeded
+		ADDED from [com.google.android.play:core-common:2.0.3] /home/ankit/.gradle/caches/8.9/transforms/3c128c07b4a486b2690fbc4e04878b39/transformed/core-common-2.0.3/AndroidManifest.xml:17:13-42
+	android:exported
+		ADDED from [com.google.android.play:core-common:2.0.3] /home/ankit/.gradle/caches/8.9/transforms/3c128c07b4a486b2690fbc4e04878b39/transformed/core-common-2.0.3/AndroidManifest.xml:16:13-37
+	android:theme
+		ADDED from [com.google.android.play:core-common:2.0.3] /home/ankit/.gradle/caches/8.9/transforms/3c128c07b4a486b2690fbc4e04878b39/transformed/core-common-2.0.3/AndroidManifest.xml:18:13-62
+	android:name
+		ADDED from [com.google.android.play:core-common:2.0.3] /home/ankit/.gradle/caches/8.9/transforms/3c128c07b4a486b2690fbc4e04878b39/transformed/core-common-2.0.3/AndroidManifest.xml:15:13-93

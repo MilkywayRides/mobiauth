@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "com.authplatform.app-debug-80:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.authplatform.app-main-82:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.authplatform.app-debug-80:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.authplatform.app-main-82:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.authplatform.app-debug-80:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.authplatform.app-main-82:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.authplatform.app-debug-80:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.authplatform.app-main-82:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.authplatform.app-debug-80:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.authplatform.app-main-82:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.authplatform.app-debug-80:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.authplatform.app-main-82:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.authplatform.app-debug-80:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.authplatform.app-main-82:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.authplatform.app-debug-80:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.authplatform.app-main-82:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.authplatform.app-debug-80:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.authplatform.app-main-82:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.authplatform.app-debug-80:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.authplatform.app-main-82:/mipmap-xxxhdpi/ic_launcher.png"
+    }
+]

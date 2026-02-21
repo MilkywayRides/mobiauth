@@ -1,0 +1,1 @@
+-keep,allowobfuscation,allowshrinking class com.authplatform.app.ui.viewmodel.AuthViewModel
