@@ -44,7 +44,7 @@ fun MainScreen(
             ) { tab ->
                 when (tab) {
                     0 -> HomeTab()
-                    1 -> SearchTab()
+                    1 -> SearchScreen()
                     2 -> ExploreTab()
                     3 -> DashboardScreen(onSignOut = onSignOut, onScanQr = onScanQr)
                 }
@@ -57,13 +57,6 @@ fun MainScreen(
 private fun HomeTab() {
     Box(modifier = Modifier.fillMaxSize()) {
         // TODO: Home content
-    }
-}
-
-@Composable
-private fun SearchTab() {
-    Box(modifier = Modifier.fillMaxSize()) {
-        // TODO: Search content
     }
 }
 
