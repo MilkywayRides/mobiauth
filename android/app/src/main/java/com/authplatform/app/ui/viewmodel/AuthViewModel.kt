@@ -261,8 +261,10 @@ class AuthViewModel @Inject constructor(
             )
             android.util.Log.d("AuthViewModel", "Dashboard state: ${_uiState.value}")
             
-            // Load sessions
-            loadSessions()
+            // Load sessions only if authenticated
+            if (_uiState.value.isAuthenticated) {
+                loadSessions()
+            }
         }
     }
 
