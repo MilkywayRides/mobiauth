@@ -27,6 +27,7 @@ import com.authplatform.app.ui.components.PrimaryButton
 import com.authplatform.app.ui.theme.*
 import com.authplatform.app.ui.viewmodel.AuthViewModel
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -37,23 +38,21 @@ fun DashboardScreen(
 ) {
     val uiState by viewModel.uiState.collectAsState()
     var isRefreshing by remember { mutableStateOf(false) }
+    val scope = rememberCoroutineScope()
 
     LaunchedEffect(Unit) {
         viewModel.loadUserData()
     }
 
-    LaunchedEffect(uiState.isLoadingSessions) {
-        if (!uiState.isLoadingSessions && isRefreshing) {
-            delay(300)
-            isRefreshing = false
-        }
-    }
-
     PullToRefreshBox(
         isRefreshing = isRefreshing,
         onRefresh = {
-            isRefreshing = true
-            viewModel.loadUserData()
+            scope.launch {
+                isRefreshing = true
+                viewModel.loadUserData()
+                delay(1000)
+                isRefreshing = false
+            }
         }
     ) {
         Column(
