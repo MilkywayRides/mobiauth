@@ -1,5 +1,7 @@
 package com.authplatform.app.ui.navigation
 
+import androidx.compose.animation.*
+import androidx.compose.animation.core.tween
 import androidx.compose.runtime.*
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
@@ -17,20 +19,27 @@ object Routes {
     const val QR_SCANNER = "qr_scanner"
 }
 
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun NavGraph() {
     val navController = rememberNavController()
     val viewModel: AuthViewModel = hiltViewModel()
     val uiState by viewModel.uiState.collectAsState()
     
-    // Check if user is already logged in
     LaunchedEffect(Unit) {
         viewModel.loadUserData()
     }
     
     val startDestination = if (uiState.isAuthenticated) Routes.DASHBOARD else Routes.PHONE_AUTH
 
-    NavHost(navController = navController, startDestination = startDestination) {
+    NavHost(
+        navController = navController, 
+        startDestination = startDestination,
+        enterTransition = { slideInHorizontally(tween(300)) { it } + fadeIn(tween(300)) },
+        exitTransition = { slideOutHorizontally(tween(300)) { -it } + fadeOut(tween(300)) },
+        popEnterTransition = { slideInHorizontally(tween(300)) { -it } + fadeIn(tween(300)) },
+        popExitTransition = { slideOutHorizontally(tween(300)) { it } + fadeOut(tween(300)) }
+    ) {
         composable(Routes.PHONE_AUTH) {
             PhoneAuthScreen(
                 onAuthSuccess = {

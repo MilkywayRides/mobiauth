@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.Logout
 import androidx.compose.material.icons.outlined.Close
@@ -13,6 +14,9 @@ import androidx.compose.material.icons.outlined.Person
 import androidx.compose.material.icons.outlined.PhoneAndroid
 import androidx.compose.material.icons.outlined.QrCodeScanner
 import androidx.compose.material.icons.outlined.Shield
+import androidx.compose.material.pullrefresh.PullRefreshIndicator
+import androidx.compose.material.pullrefresh.pullRefresh
+import androidx.compose.material.pullrefresh.rememberPullRefreshState
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -24,7 +28,9 @@ import com.authplatform.app.ui.components.AuthCard
 import com.authplatform.app.ui.components.PrimaryButton
 import com.authplatform.app.ui.theme.*
 import com.authplatform.app.ui.viewmodel.AuthViewModel
+import kotlinx.coroutines.delay
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun DashboardScreen(
     onSignOut: () -> Unit,
@@ -32,21 +38,38 @@ fun DashboardScreen(
     viewModel: AuthViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
+    var isRefreshing by remember { mutableStateOf(false) }
 
-    // Load user data from DataStore on screen load
+    val pullRefreshState = rememberPullRefreshState(
+        refreshing = isRefreshing,
+        onRefresh = {
+            isRefreshing = true
+            viewModel.loadUserData()
+            viewModel.loadSessions()
+        }
+    )
+
     LaunchedEffect(Unit) {
         viewModel.loadUserData()
     }
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .verticalScroll(rememberScrollState())
-            .statusBarsPadding()
-            .navigationBarsPadding()
-            .padding(24.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
+    LaunchedEffect(uiState.isLoadingSessions) {
+        if (!uiState.isLoadingSessions && isRefreshing) {
+            delay(300)
+            isRefreshing = false
+        }
+    }
+
+    Box(modifier = Modifier.pullRefresh(pullRefreshState)) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .verticalScroll(rememberScrollState())
+                .statusBarsPadding()
+                .navigationBarsPadding()
+                .padding(24.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
         Spacer(modifier = Modifier.height(32.dp))
 
         // Avatar
@@ -206,6 +229,13 @@ fun DashboardScreen(
                 onSignOut()
             },
             modifier = Modifier.padding(bottom = 16.dp)
+        )
+    }
+
+        PullRefreshIndicator(
+            refreshing = isRefreshing,
+            state = pullRefreshState,
+            modifier = Modifier.align(Alignment.TopCenter)
         )
     }
 }
