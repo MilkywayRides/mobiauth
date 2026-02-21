@@ -24,7 +24,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
-private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "auth")
+val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "auth_prefs")
 
 @Module
 @InstallIn(SingletonComponent::class)
