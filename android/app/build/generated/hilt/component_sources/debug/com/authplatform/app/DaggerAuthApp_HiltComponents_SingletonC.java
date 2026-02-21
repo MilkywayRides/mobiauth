@@ -599,7 +599,7 @@ public final class DaggerAuthApp_HiltComponents_SingletonC {
           return (T) AppModule_ProvideRetrofitFactory.provideRetrofit(singletonCImpl.provideOkHttpClientProvider.get());
 
           case 3: // okhttp3.OkHttpClient 
-          return (T) AppModule_ProvideOkHttpClientFactory.provideOkHttpClient();
+          return (T) AppModule_ProvideOkHttpClientFactory.provideOkHttpClient(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule));
 
           default: throw new AssertionError(id);
         }
