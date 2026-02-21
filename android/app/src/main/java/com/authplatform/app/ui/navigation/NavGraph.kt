@@ -19,7 +19,6 @@ object Routes {
     const val QR_SCANNER = "qr_scanner"
 }
 
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun NavGraph() {
     val navController = rememberNavController()
@@ -32,14 +31,7 @@ fun NavGraph() {
     
     val startDestination = if (uiState.isAuthenticated) Routes.DASHBOARD else Routes.PHONE_AUTH
 
-    NavHost(
-        navController = navController, 
-        startDestination = startDestination,
-        enterTransition = { slideInHorizontally(tween(300)) { it } + fadeIn(tween(300)) },
-        exitTransition = { slideOutHorizontally(tween(300)) { -it } + fadeOut(tween(300)) },
-        popEnterTransition = { slideInHorizontally(tween(300)) { -it } + fadeIn(tween(300)) },
-        popExitTransition = { slideOutHorizontally(tween(300)) { it } + fadeOut(tween(300)) }
-    ) {
+    NavHost(navController = navController, startDestination = startDestination) {
         composable(Routes.PHONE_AUTH) {
             PhoneAuthScreen(
                 onAuthSuccess = {

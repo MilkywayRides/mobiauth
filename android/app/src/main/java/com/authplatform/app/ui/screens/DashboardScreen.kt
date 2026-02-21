@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.Logout
 import androidx.compose.material.icons.outlined.Close
@@ -13,11 +12,10 @@ import androidx.compose.material.icons.outlined.Email
 import androidx.compose.material.icons.outlined.Person
 import androidx.compose.material.icons.outlined.PhoneAndroid
 import androidx.compose.material.icons.outlined.QrCodeScanner
+import androidx.compose.material.icons.outlined.Refresh
 import androidx.compose.material.icons.outlined.Shield
-import androidx.compose.material.pullrefresh.PullRefreshIndicator
-import androidx.compose.material.pullrefresh.pullRefresh
-import androidx.compose.material.pullrefresh.rememberPullRefreshState
 import androidx.compose.material3.*
+import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -30,7 +28,7 @@ import com.authplatform.app.ui.theme.*
 import com.authplatform.app.ui.viewmodel.AuthViewModel
 import kotlinx.coroutines.delay
 
-@OptIn(ExperimentalMaterialApi::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DashboardScreen(
     onSignOut: () -> Unit,
@@ -39,15 +37,6 @@ fun DashboardScreen(
 ) {
     val uiState by viewModel.uiState.collectAsState()
     var isRefreshing by remember { mutableStateOf(false) }
-
-    val pullRefreshState = rememberPullRefreshState(
-        refreshing = isRefreshing,
-        onRefresh = {
-            isRefreshing = true
-            viewModel.loadUserData()
-            viewModel.loadSessions()
-        }
-    )
 
     LaunchedEffect(Unit) {
         viewModel.loadUserData()
@@ -60,7 +49,14 @@ fun DashboardScreen(
         }
     }
 
-    Box(modifier = Modifier.pullRefresh(pullRefreshState)) {
+    PullToRefreshBox(
+        isRefreshing = isRefreshing,
+        onRefresh = {
+            isRefreshing = true
+            viewModel.loadUserData()
+            viewModel.loadSessions()
+        }
+    ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -231,12 +227,6 @@ fun DashboardScreen(
             modifier = Modifier.padding(bottom = 16.dp)
         )
     }
-
-        PullRefreshIndicator(
-            refreshing = isRefreshing,
-            state = pullRefreshState,
-            modifier = Modifier.align(Alignment.TopCenter)
-        )
     }
 }
 
