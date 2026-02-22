@@ -13,9 +13,9 @@ export const apiRateLimiter = new RateLimiterMemory({
     duration: 60,
 });
 
-// QR token generation limiter: 10 per minute per IP
+// QR token generation limiter: 5 per minute per IP
 export const qrRateLimiter = new RateLimiterMemory({
-    points: 10,
+    points: 5,
     duration: 60,
 });
 

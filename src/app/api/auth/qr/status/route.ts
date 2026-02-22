@@ -14,36 +14,39 @@ export async function GET(req: NextRequest) {
 
         const qrToken = await prisma.qrLoginToken.findUnique({
             where: { token },
+            select: { id: true, status: true, expiresAt: true, userId: true }
         });
 
         if (!qrToken) {
             return NextResponse.json({ error: "Invalid token" }, { status: 404 });
         }
 
-        // Check expiry
-        if (isTokenExpired(qrToken.expiresAt) && qrToken.status === "pending") {
-            await prisma.qrLoginToken.update({
-                where: { id: qrToken.id },
-                data: { status: "expired" },
+        if (isTokenExpired(qrToken.expiresAt)) {
+            if (qrToken.status === "pending") {
+                await prisma.qrLoginToken.update({
+                    where: { id: qrToken.id },
+                    data: { status: "expired" },
+                });
+            }
+            return NextResponse.json({ status: "expired" }, { 
+                headers: { "Cache-Control": "public, max-age=300" }
             });
-            return NextResponse.json({ status: "expired" });
         }
 
         if (qrToken.status === "confirmed" && qrToken.userId) {
-            // Return confirmed status — but do NOT leak the userId to the poller
-            // The /qr/login route will look up the userId from the DB using the token
-            return NextResponse.json({
-                status: "confirmed",
+            return NextResponse.json({ status: "confirmed" }, {
+                headers: { "Cache-Control": "public, max-age=60" }
             });
         }
 
         if (qrToken.status === "used") {
-            return NextResponse.json({ status: "used" });
+            return NextResponse.json({ status: "used" }, {
+                headers: { "Cache-Control": "public, max-age=300" }
+            });
         }
 
-        return NextResponse.json({
-            status: qrToken.status,
-            expiresAt: qrToken.expiresAt.toISOString(),
+        return NextResponse.json({ status: qrToken.status }, {
+            headers: { "Cache-Control": "no-cache, must-revalidate" }
         });
     } catch (error) {
         console.error("[QR Status] Error:", error);

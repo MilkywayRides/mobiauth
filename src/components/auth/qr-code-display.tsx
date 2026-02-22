@@ -106,7 +106,7 @@ export function QrCodeDisplay() {
 
     useEffect(() => {
         if (status === "pending" && token) {
-            pollRef.current = setInterval(pollStatus, 2000);
+            pollRef.current = setInterval(pollStatus, 3000);
             return () => {
                 if (pollRef.current) clearInterval(pollRef.current);
             };

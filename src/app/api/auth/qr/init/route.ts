@@ -7,7 +7,6 @@ const prisma = new PrismaClient();
 
 export async function POST(req: NextRequest) {
     try {
-        // Rate limit by IP
         const ip = req.headers.get("x-forwarded-for") || req.headers.get("x-real-ip") || "unknown";
         const { allowed, retryAfter } = await checkRateLimit(qrRateLimiter, ip);
         if (!allowed) {
@@ -19,7 +18,6 @@ export async function POST(req: NextRequest) {
 
         const { token, signature, nonce, expiresAt } = generateQrToken();
 
-        // Store in database (nonce is stored but NOT sent in QR data)
         await prisma.qrLoginToken.create({
             data: {
                 token,
@@ -34,9 +32,8 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({
             token,
             signature,
-            nonce, // Returned to browser only — NOT embedded in QR code
+            nonce,
             expiresAt: expiresAt.toISOString(),
-            // QR data only contains token + signature (no nonce)
             qrData: JSON.stringify({ token, signature, expiresAt: expiresAt.toISOString() }),
         });
     } catch (error) {

@@ -35,8 +35,8 @@ fun NavGraph() {
         composable(Routes.PHONE_AUTH) {
             PhoneAuthScreen(
                 onAuthSuccess = {
-                    navController.navigate(Routes.DASHBOARD) {
-                        popUpTo(Routes.PHONE_AUTH) { inclusive = true }
+                    navController.navigate(Routes.SIGNUP) {
+                        launchSingleTop = true
                     }
                 },
                 onSkip = {
@@ -65,7 +65,9 @@ fun NavGraph() {
         composable(Routes.SIGNUP) {
             NewSignupScreen(
                 onNavigateToLogin = {
-                    navController.popBackStack()
+                    navController.navigate(Routes.LOGIN) {
+                        launchSingleTop = true
+                    }
                 },
                 onSignupSuccess = {
                     navController.navigate(Routes.DASHBOARD) {

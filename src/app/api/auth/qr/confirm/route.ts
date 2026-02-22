@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 import { verifyTokenSignature, isTokenExpired } from "@/lib/qr";
 import { auth } from "@/lib/auth";
-import { headers } from "next/headers";
 import { checkRateLimit, qrRateLimiter } from "@/lib/rate-limit";
 
 const prisma = new PrismaClient();
@@ -27,8 +26,7 @@ export async function POST(req: NextRequest) {
         }
 
         // Get current session (mobile user must be authenticated)
-        const headersList = await headers();
-        const session = await auth.api.getSession({ headers: headersList });
+        const session = await auth.api.getSession({ headers: req.headers });
 
         if (!session) {
             return NextResponse.json({ error: "Authentication required" }, { status: 401 });

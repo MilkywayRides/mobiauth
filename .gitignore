@@ -34,6 +34,18 @@ yarn-error.log*
 next-env.d.ts
 
 # Android
+android/.gradle/
+android/app/build/
+android/build/
+android/.kotlin/
+android/local.properties
+*.apk
+*.aab
+
+# Google Services
+google-services.json
+
+# Android
 android/app/build/
 android/build/
 android/.gradle/
