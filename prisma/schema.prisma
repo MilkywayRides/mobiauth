@@ -19,6 +19,9 @@ model User {
   banned        Boolean?
   banReason     String?
   banExpires    DateTime?
+  twoFactorEnabled Boolean @default(false)
+  twoFactorSecret  String?
+  backupCodes      String[]
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 
@@ -28,6 +31,7 @@ model User {
   oauthClients  OAuthClient[]
   apiKeys       ApiKey[]
   authorizations OAuthAuthorization[]
+  auditLogs     AuditLog[]
 
   @@map("user")
 }
@@ -178,4 +182,21 @@ model ApiKey {
   @@index([key])
   @@index([userId])
   @@map("api_key")
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String
+  action    String   // login, logout, password_change, 2fa_enable, etc.
+  ipAddress String?
+  userAgent String?
+  metadata  Json?
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([action])
+  @@index([createdAt])
+  @@map("audit_log")
 }
