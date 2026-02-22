@@ -15,7 +15,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { QrCodeDisplay } from "@/components/auth/qr-code-display";
 import { useState } from "react";
 import { signIn } from "@/lib/auth-client";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { toast } from "sonner";
 import { Eye, EyeOff, Loader2, QrCode, Mail } from "lucide-react";
 import Link from "next/link";
@@ -24,6 +24,9 @@ export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+  const searchParams = useSearchParams();
+  const from = searchParams.get("from") || "/dashboard";
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -177,7 +180,7 @@ export function LoginForm({
                 </form>
                 <div className="text-center text-sm">
                   Don&apos;t have an account?{" "}
-                  <Link href="/auth/signup" className="underline underline-offset-4">
+                  <Link href={`/auth/signup?from=${encodeURIComponent(from)}`} className="underline underline-offset-4">
                     Sign up
                   </Link>
                 </div>
@@ -188,7 +191,7 @@ export function LoginForm({
               <div className="pt-4">
                 <QrCodeDisplay />
                 <div className="text-center text-sm mt-4">
-                  <Link href="/auth/signup" className="underline underline-offset-4">
+                  <Link href={`/auth/signup?from=${encodeURIComponent(from)}`} className="underline underline-offset-4">
                     Don&apos;t have an account? Sign up
                   </Link>
                 </div>

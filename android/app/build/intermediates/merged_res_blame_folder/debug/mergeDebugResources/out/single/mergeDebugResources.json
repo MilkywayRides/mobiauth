@@ -1,42 +1,54 @@
 [
     {
-        "merged": "com.authplatform.app-debug-80:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.authplatform.app-main-82:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-debug-80:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-main-82:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "com.authplatform.app-debug-80:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.authplatform.app-main-82:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-debug-80:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-main-82:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.authplatform.app-debug-80:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "com.authplatform.app-main-82:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-debug-80:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-main-82:/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.authplatform.app-debug-80:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "com.authplatform.app-main-82:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-debug-80:/drawable_ic_google.xml.flat",
+        "source": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-main-82:/drawable/ic_google.xml"
     },
     {
-        "merged": "com.authplatform.app-debug-80:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "com.authplatform.app-main-82:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-debug-80:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-main-82:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.authplatform.app-debug-80:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.authplatform.app-main-82:/mipmap-hdpi/ic_launcher.png"
+        "merged": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-debug-80:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-main-82:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.authplatform.app-debug-80:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.authplatform.app-main-82:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-debug-80:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-main-82:/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.authplatform.app-debug-80:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "com.authplatform.app-main-82:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "com.authplatform.app-debug-80:/drawable_ic_github_light.xml.flat",
+        "source": "com.authplatform.app-main-82:/drawable/ic_github_light.xml"
     },
     {
-        "merged": "com.authplatform.app-debug-80:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.authplatform.app-main-82:/mipmap-mdpi/ic_launcher.png"
+        "merged": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-debug-80:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-main-82:/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.authplatform.app-debug-80:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.authplatform.app-main-82:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-debug-80:/drawable_ic_github.xml.flat",
+        "source": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-main-82:/drawable/ic_github.xml"
+    },
+    {
+        "merged": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-debug-80:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-main-82:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-debug-80:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-main-82:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-debug-80:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/home/ankit/.gradle/daemon/8.9/com.authplatform.app-main-82:/mipmap-mdpi/ic_launcher_round.png"
     }
 ]

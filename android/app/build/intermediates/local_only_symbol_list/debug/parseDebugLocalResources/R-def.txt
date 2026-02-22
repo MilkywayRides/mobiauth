@@ -1,5 +1,8 @@
 R_DEF: Internal format may change without notice
 local
+drawable ic_github
+drawable ic_github_light
+drawable ic_google
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name

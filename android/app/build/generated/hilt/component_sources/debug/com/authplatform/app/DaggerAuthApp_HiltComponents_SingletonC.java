@@ -557,7 +557,7 @@ public final class DaggerAuthApp_HiltComponents_SingletonC {
     }
 
     @Override
-    public void injectAuthApp(AuthApp authApp) {
+    public void injectAuthApp(AuthApp arg0) {
     }
 
     @Override
