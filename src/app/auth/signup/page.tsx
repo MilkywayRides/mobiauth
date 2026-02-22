@@ -1,5 +1,6 @@
 import { Shield } from "lucide-react";
 import { SignupForm } from "@/components/signup-form";
+import { Suspense } from "react";
 
 export default function SignupPage() {
     return (
@@ -11,7 +12,9 @@ export default function SignupPage() {
                     </div>
                     AuthPlatform
                 </a>
-                <SignupForm />
+                <Suspense fallback={<div className="h-96 flex items-center justify-center">Loading...</div>}>
+                    <SignupForm />
+                </Suspense>
             </div>
         </div>
     );
