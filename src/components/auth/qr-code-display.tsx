@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Loader2, QrCode, RefreshCw, CheckCircle, Smartphone, ShieldCheck } from "lucide-react";
 
 export function QrCodeDisplay() {
-    const [qrData, setQrData] = useState<string | null>(null);
     const [status, setStatus] = useState<"loading" | "pending" | "confirmed" | "logging-in" | "expired" | "error">("loading");
     const [token, setToken] = useState<string | null>(null);
     const [nonce, setNonce] = useState<string | null>(null);
@@ -30,7 +29,6 @@ export function QrCodeDisplay() {
             const data = await res.json();
             setToken(data.token);
             setNonce(data.nonce); // Store nonce for browser-binding
-            setQrData(data.qrData);
             setStatus("pending");
 
             // Render QR code
