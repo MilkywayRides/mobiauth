@@ -1,8 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
-
 const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
 
 export async function POST(req: NextRequest) {

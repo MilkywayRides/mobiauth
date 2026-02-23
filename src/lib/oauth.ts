@@ -44,7 +44,7 @@ export function encryptPayload(data: object): string {
   return Buffer.concat([iv, authTag, encrypted]).toString("base64");
 }
 
-export function decryptPayload(encrypted: string): object {
+export function decryptPayload(encrypted: string): unknown {
   const buffer = Buffer.from(encrypted, "base64");
   const iv = buffer.subarray(0, 16);
   const authTag = buffer.subarray(16, 32);
@@ -74,12 +74,19 @@ export function generateCrossAppToken(userId: string, appId: string): string {
 
 export function verifyCrossAppToken(token: string): { userId: string; appId: string } | null {
   try {
-    const payload = decryptPayload(token) as any;
-    const age = Date.now() - payload.timestamp;
-    
+    const payload = decryptPayload(token);
+
+    if (!payload || typeof payload !== "object") return null;
+
+    const tokenData = payload as { userId?: unknown; appId?: unknown; timestamp?: unknown };
+    if (typeof tokenData.userId !== "string" || typeof tokenData.appId !== "string" || typeof tokenData.timestamp !== "number") {
+      return null;
+    }
+
+    const age = Date.now() - tokenData.timestamp;
     if (age > 5 * 60 * 1000) return null; // 5 min expiry
-    
-    return { userId: payload.userId, appId: payload.appId };
+
+    return { userId: tokenData.userId, appId: tokenData.appId };
   } catch {
     return null;
   }

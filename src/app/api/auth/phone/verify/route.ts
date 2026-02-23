@@ -3,23 +3,28 @@ import { auth } from "@/lib/auth";
 
 export async function POST(req: NextRequest) {
   try {
-    const { idToken, phoneNumber } = await req.json();
-    
-    // Verify Firebase token would happen here
-    // For now, create/login user with phone
-    
+    const { idToken, phoneNumber } = (await req.json()) as {
+      idToken?: string;
+      phoneNumber?: string;
+    };
+
+    if (!idToken || !phoneNumber) {
+      return NextResponse.json(
+        { error: "idToken and phoneNumber are required" },
+        { status: 400 }
+      );
+    }
+
     const session = await auth.api.signInSocial({
       body: {
         provider: "phone",
-        idToken,
+        idToken: { token: idToken },
       },
     });
 
     return NextResponse.json(session);
-  } catch (error: any) {
-    return NextResponse.json(
-      { error: error.message || "Phone verification failed" },
-      { status: 400 }
-    );
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : "Phone verification failed";
+    return NextResponse.json({ error: message }, { status: 400 });
   }
 }

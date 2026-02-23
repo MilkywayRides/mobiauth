@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
-import { generateCrossAppToken, decryptPayload } from "@/lib/oauth";
+import { generateCrossAppToken } from "@/lib/oauth";
 
 const prisma = new PrismaClient();
 const MASTER_KEY = process.env.CROSS_APP_MASTER_KEY;
