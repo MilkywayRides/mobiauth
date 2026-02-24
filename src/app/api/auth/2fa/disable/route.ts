@@ -10,14 +10,14 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  await prisma.user.update({
-    where: { id: session.user.id },
-    data: {
-      twoFactorEnabled: false,
-      twoFactorSecret: null,
-      backupCodes: [],
-    },
-  });
+  await prisma.$executeRaw`
+    UPDATE "user"
+    SET
+      "twoFactorEnabled" = FALSE,
+      "twoFactorSecret" = NULL,
+      "backupCodes" = ARRAY[]::text[]
+    WHERE "id" = ${session.user.id}
+  `;
 
   return NextResponse.json({ success: true });
 }

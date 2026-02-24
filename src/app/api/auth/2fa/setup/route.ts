@@ -16,10 +16,11 @@ export async function POST(req: NextRequest) {
     name: `AuthPlatform (${session.user.email})`,
   });
 
-  await prisma.user.update({
-    where: { id: session.user.id },
-    data: { twoFactorSecret: secret.base32 },
-  });
+  await prisma.$executeRaw`
+    UPDATE "user"
+    SET "twoFactorSecret" = ${secret.base32}
+    WHERE "id" = ${session.user.id}
+  `;
 
   const qrCode = await QRCode.toDataURL(secret.otpauth_url!);
 
