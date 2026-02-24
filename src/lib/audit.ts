@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import { Prisma, PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -7,7 +7,7 @@ export async function logAudit(
   action: string,
   ipAddress?: string,
   userAgent?: string,
-  metadata?: Record<string, any>
+  metadata?: Prisma.InputJsonValue
 ) {
   try {
     await prisma.auditLog.create({
@@ -16,7 +16,7 @@ export async function logAudit(
         action,
         ipAddress,
         userAgent,
-        metadata: metadata || {},
+        metadata: metadata ?? {},
       },
     });
   } catch (error) {

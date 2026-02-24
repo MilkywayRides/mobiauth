@@ -11,7 +11,7 @@ export async function GET() {
       timestamp: new Date().toISOString(),
       service: "auth-system"
     });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ 
       status: "error",
       message: "Database connection failed"
