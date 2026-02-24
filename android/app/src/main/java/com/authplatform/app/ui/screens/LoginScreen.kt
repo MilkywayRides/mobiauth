@@ -130,38 +130,7 @@ private fun EmailLoginTab(viewModel: AuthViewModel, uiState: AuthUiState) {
     var showPassword by remember { mutableStateOf(false) }
 
     Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
-        // OAuth buttons side by side
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.spacedBy(12.dp)
-        ) {
-            OutlinedButton(
-                onClick = { /* TODO: OAuth */ },
-                modifier = Modifier.weight(1f),
-                colors = ButtonDefaults.outlinedButtonColors(
-                    containerColor = MaterialTheme.colorScheme.surface
-                )
-            ) {
-                Icon(
-                    imageVector = Icons.Default.Email,
-                    contentDescription = "Google",
-                    modifier = Modifier.size(24.dp)
-                )
-            }
-            OutlinedButton(
-                onClick = { /* TODO: OAuth */ },
-                modifier = Modifier.weight(1f),
-                colors = ButtonDefaults.outlinedButtonColors(
-                    containerColor = MaterialTheme.colorScheme.surface
-                )
-            ) {
-                Icon(
-                    imageVector = Icons.Default.Email,
-                    contentDescription = "GitHub",
-                    modifier = Modifier.size(24.dp)
-                )
-            }
-        }
+        OAuthButtons(onSuccess = {})
 
         SeparatorWithText("Or continue with")
 

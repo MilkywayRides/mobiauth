@@ -48,13 +48,17 @@ object AppModule {
                     runBlocking {
                         val token = AuthRepository.getSessionToken(context)
                         if (!token.isNullOrEmpty()) {
-                            val cookie = Cookie.Builder()
-                                .name("auth.session_token")
+                            val cookieName = if (url.isHttps) "__Secure-auth.session_token" else "auth.session_token"
+                            val builder = Cookie.Builder()
+                                .name(cookieName)
                                 .value(token)
                                 .domain(url.host)
                                 .path("/")
-                                .build()
-                            cookies.add(cookie)
+                                .httpOnly()
+                            if (url.isHttps) {
+                                builder.secure()
+                            }
+                            cookies.add(builder.build())
                             android.util.Log.d("CookieJar", "Loading session cookie for ${url.host}")
                         }
                     }
