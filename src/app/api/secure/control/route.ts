@@ -320,19 +320,20 @@ export async function POST(req: NextRequest) {
           },
         }),
         payload.includeAuditLogs
-          ? prisma.auditLog.findMany({
-              take: limit,
-              orderBy: { createdAt: "desc" },
-              select: {
-                id: true,
-                userId: true,
-                action: true,
-                ipAddress: true,
-                userAgent: true,
-                metadata: true,
-                createdAt: true,
-              },
-            })
+          ? prisma.$queryRaw<
+              Array<{
+                id: string;
+                userId: string;
+                action: string;
+                ipAddress: string | null;
+                userAgent: string | null;
+                metadata: unknown;
+                createdAt: Date;
+              }>
+            >`SELECT id, "userId", action, "ipAddress", "userAgent", metadata, "createdAt"
+              FROM audit_log
+              ORDER BY "createdAt" DESC
+              LIMIT ${limit}`
           : Promise.resolve([]),
       ]);
 
