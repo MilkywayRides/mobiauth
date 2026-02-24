@@ -41,6 +41,8 @@ export default function DashboardPage() {
   const user = session?.user;
 
   const handleSignOut = async () => {
+    // Revoke OAuth authorizations
+    await fetch("/api/auth/revoke-oauth", { method: "POST" });
     await signOut();
     router.push("/auth/login");
     router.refresh();

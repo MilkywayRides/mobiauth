@@ -93,10 +93,12 @@ export function verifyCrossAppToken(token: string): { userId: string; appId: str
 }
 
 export const AVAILABLE_SCOPES = {
+  "openid": "OpenID Connect",
   "profile": "Access basic profile information",
   "email": "Access email address",
   "read:user": "Read user data",
   "write:user": "Update user data",
+  "admin:users": "Access all users (admin only)",
 } as const;
 
 export type Scope = keyof typeof AVAILABLE_SCOPES;

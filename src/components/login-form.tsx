@@ -25,7 +25,7 @@ export function LoginForm({
   ...props
 }: React.ComponentProps<"div">) {
   const searchParams = useSearchParams();
-  const from = searchParams.get("from") || "/dashboard";
+  const returnTo = searchParams.get("returnTo") || "/dashboard";
   
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -43,7 +43,7 @@ export function LoginForm({
         toast.error(res.error.message || "Invalid credentials");
       } else {
         toast.success("Signed in successfully");
-        router.push("/dashboard");
+        router.push(returnTo);
         router.refresh();
       }
     } catch {
@@ -55,7 +55,7 @@ export function LoginForm({
 
   const handleOAuth = async (provider: "google" | "github") => {
     try {
-      await signIn.social({ provider, callbackURL: "/dashboard" });
+      await signIn.social({ provider, callbackURL: returnTo });
     } catch {
       toast.error(`Failed to sign in with ${provider}`);
     }
@@ -180,7 +180,7 @@ export function LoginForm({
                 </form>
                 <div className="text-center text-sm">
                   Don&apos;t have an account?{" "}
-                  <Link href={`/auth/signup?from=${encodeURIComponent(from)}`} className="underline underline-offset-4">
+                  <Link href={`/auth/signup?returnTo=${encodeURIComponent(returnTo)}`} className="underline underline-offset-4">
                     Sign up
                   </Link>
                 </div>
@@ -191,7 +191,7 @@ export function LoginForm({
               <div className="pt-4">
                 <QrCodeDisplay />
                 <div className="text-center text-sm mt-4">
-                  <Link href={`/auth/signup?from=${encodeURIComponent(from)}`} className="underline underline-offset-4">
+                  <Link href={`/auth/signup?returnTo=${encodeURIComponent(returnTo)}`} className="underline underline-offset-4">
                     Don&apos;t have an account? Sign up
                   </Link>
                 </div>
