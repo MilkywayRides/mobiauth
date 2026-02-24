@@ -6,6 +6,7 @@ import {
   type EncryptedEnvelope,
 } from "@/lib/secure-control";
 import { generateApiKey, generateClientCredentials, hashSecret } from "@/lib/oauth";
+import { buildAdvancedConfig, normalizeRedirectUris, normalizeScopes, normalizeWebsite } from "@/lib/oauth-config";
 
 const prisma = new PrismaClient();
 
@@ -196,6 +197,11 @@ export async function POST(req: NextRequest) {
         );
       }
 
+      const normalizedRedirectUris = normalizeRedirectUris(payload.redirectUris);
+      const normalizedScopes = normalizeScopes(payload.scopes);
+      const normalizedWebsite = normalizeWebsite(payload.website);
+      const advancedConfig = buildAdvancedConfig(undefined, normalizedRedirectUris);
+
       const { clientId, clientSecret } = generateClientCredentials();
       const client = await prisma.oAuthClient.create({
         data: {
@@ -205,9 +211,9 @@ export async function POST(req: NextRequest) {
           name: payload.name,
           description: payload.description,
           logo: payload.logo,
-          website: payload.website,
-          redirectUris: payload.redirectUris,
-          scopes: payload.scopes || ["profile", "email"],
+          website: normalizedWebsite,
+          redirectUris: normalizedRedirectUris,
+          scopes: normalizedScopes,
         },
         select: {
           id: true,
@@ -224,7 +230,10 @@ export async function POST(req: NextRequest) {
         encryptEnvelope(
           {
             success: true,
-            oauthClient: client,
+            oauthClient: {
+              ...client,
+              advanced: advancedConfig,
+            },
             plainTextClientSecret: clientSecret,
             warning: "Save client secret now. It will not be returned again.",
           },

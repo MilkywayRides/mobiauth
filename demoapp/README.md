@@ -1,43 +1,37 @@
 # Demo App (External Controller)
 
-This demo app shows how to control this auth service from another application using the encrypted control plane.
+This demo app shows advanced OAuth/API-key/user management from another app via the encrypted secure-control endpoint.
 
-## Features in demoapp
+## Features
 
-- List users
-- Set user role
-- List API keys
-- Create API key
-- List OAuth clients
-- Create OAuth client
-
-All operations call `POST /api/secure/control` using encrypted envelopes.
+- List users and update user roles
+- List API keys and create API keys
+- List OAuth clients and create OAuth clients with advanced setup:
+  - callback/redirect URIs
+  - scopes
+  - description / website / logo metadata
+- Uses encrypted envelopes for every control request
 
 ## Setup
 
-1. Copy env template:
-
 ```bash
 cp .env.example .env
-```
-
-2. Fill `.env` values to match your auth service env:
-
-- `AUTH_SERVICE_URL`
-- `CONTROL_SERVICE_TOKEN`
-- `CONTROL_ENCRYPTION_KEY`
-- `CONTROL_HMAC_KEY`
-
-3. Install + run:
-
-```bash
-npm install
 npm run dev
 ```
 
 Open: `http://localhost:4100`
 
-## Notes
+## Environment
 
-- This is a demo controller app for development/testing.
-- Use mTLS, key rotation, and centralized nonce replay storage for production.
+- `AUTH_SERVICE_URL`
+- `CONTROL_SERVICE_TOKEN`
+- `CONTROL_ENCRYPTION_KEY`
+- `CONTROL_HMAC_KEY`
+- `PORT`
+
+## DevOps recommendations
+
+- Put auth service + demo/controller behind private networking.
+- Use mTLS between services.
+- Rotate control keys with KMS/HSM and short rollout windows.
+- Add centralized replay cache (Redis) and SIEM alerts for control actions.
