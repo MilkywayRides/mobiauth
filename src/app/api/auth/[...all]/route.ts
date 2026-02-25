@@ -15,17 +15,33 @@ export async function OPTIONS() {
 }
 
 export async function GET(req: Request) {
-    const res = await handler.GET(req);
-    Object.entries(corsHeaders).forEach(([key, value]) => {
-        res.headers.set(key, value);
-    });
-    return res;
+    try {
+        const res = await handler.GET(req);
+        Object.entries(corsHeaders).forEach(([key, value]) => {
+            res.headers.set(key, value);
+        });
+        return res;
+    } catch (error) {
+        console.error("Auth GET error:", error);
+        return new Response(JSON.stringify({ error: error instanceof Error ? error.message : "Internal error" }), {
+            status: 500,
+            headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+    }
 }
 
 export async function POST(req: Request) {
-    const res = await handler.POST(req);
-    Object.entries(corsHeaders).forEach(([key, value]) => {
-        res.headers.set(key, value);
-    });
-    return res;
+    try {
+        const res = await handler.POST(req);
+        Object.entries(corsHeaders).forEach(([key, value]) => {
+            res.headers.set(key, value);
+        });
+        return res;
+    } catch (error) {
+        console.error("Auth POST error:", error);
+        return new Response(JSON.stringify({ error: error instanceof Error ? error.message : "Internal error" }), {
+            status: 500,
+            headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+    }
 }
