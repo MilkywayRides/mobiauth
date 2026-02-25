@@ -17,7 +17,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Shield className="h-6 w-6" />
-            <span className="text-lg font-bold">AuthPlatform</span>
+            <span className="text-lg font-bold">BlazeNeuro Auth</span>
           </div>
           <div className="flex items-center gap-3">
             <Link href="/auth/login">

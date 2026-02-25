@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
   }
 
   const secret = speakeasy.generateSecret({
-    name: `AuthPlatform (${session.user.email})`,
+    name: `BlazeNeuro Auth (${session.user.email})`,
   });
 
   await prisma.$executeRaw`
