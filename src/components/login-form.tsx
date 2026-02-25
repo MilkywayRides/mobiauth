@@ -72,19 +72,19 @@ export function LoginForm({
         </CardHeader>
         <CardContent>
           <Tabs defaultValue="credentials" className="w-full">
-            <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="credentials" className="gap-1.5">
-                <Mail className="h-3.5 w-3.5" />
+            <TabsList className="grid w-full grid-cols-2 mb-4">
+              <TabsTrigger value="credentials" className="gap-2">
+                <Mail className="h-4 w-4" />
                 Email
               </TabsTrigger>
-              <TabsTrigger value="qr" className="gap-1.5">
-                <QrCode className="h-3.5 w-3.5" />
+              <TabsTrigger value="qr" className="gap-2">
+                <QrCode className="h-4 w-4" />
                 QR Code
               </TabsTrigger>
             </TabsList>
 
-            <TabsContent value="credentials">
-              <div className="grid gap-6 pt-4">
+            <TabsContent value="credentials" className="mt-0">
+              <div className="grid gap-6">
                 <div className="flex flex-col gap-4">
                   <Button
                     variant="outline"
@@ -187,10 +187,10 @@ export function LoginForm({
               </div>
             </TabsContent>
 
-            <TabsContent value="qr">
-              <div className="pt-4">
+            <TabsContent value="qr" className="mt-0">
+              <div className="py-4">
                 <QrCodeDisplay />
-                <div className="text-center text-sm mt-4">
+                <div className="text-center text-sm text-muted-foreground mt-6">
                   <Link href={`/auth/signup?returnTo=${encodeURIComponent(returnTo)}`} className="underline underline-offset-4">
                     Don&apos;t have an account? Sign up
                   </Link>
