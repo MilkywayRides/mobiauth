@@ -38,12 +38,12 @@ Copy the SHA-1 fingerprint (format: `XX:XX:XX:...`)
 
 1. **Create/Select Project**
    - Go to https://console.firebase.google.com/
-   - Create new project: "Auth Platform" (or use existing)
+   - Create new project: "BlazeNeuro Auth" (or use existing)
 
 2. **Add Android App**
    - Click Android icon
    - Package name: `com.authplatform.app`
-   - App nickname: `Auth Platform`
+   - App nickname: `BlazeNeuro Auth`
    - **Paste your SHA-1 fingerprint**
    - Click "Register app"
 
@@ -76,7 +76,7 @@ Copy the SHA-1 fingerprint (format: `XX:XX:XX:...`)
 1. Go to https://github.com/settings/developers
 2. Click **New OAuth App**
 3. Fill in:
-   - **Application name**: `Auth Platform`
+   - **Application name**: `BlazeNeuro Auth`
    - **Homepage URL**: `http://localhost:3000`
    - **Authorization callback URL**: `http://localhost:3000/api/auth/callback/github`
 4. Click **Register application**
