@@ -41,6 +41,8 @@ export default function DashboardPage() {
   const user = session?.user;
 
   const handleSignOut = async () => {
+    // Revoke OAuth authorizations
+    await fetch("/api/auth/revoke-oauth", { method: "POST" });
     await signOut();
     router.push("/auth/login");
     router.refresh();
@@ -53,7 +55,7 @@ export default function DashboardPage() {
           <div className="flex items-center gap-6">
             <Link href="/" className="flex items-center gap-2">
               <Shield className="h-5 w-5" />
-              <span className="text-lg font-bold">AuthPlatform</span>
+              <span className="text-lg font-bold">BlazeNeuro Auth</span>
             </Link>
 
             <nav className="hidden md:flex items-center gap-1">

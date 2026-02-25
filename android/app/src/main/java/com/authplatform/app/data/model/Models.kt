@@ -1,5 +1,7 @@
 package com.authplatform.app.data.model
 
+import com.google.gson.annotations.SerializedName
+
 data class User(
     val id: String = "",
     val name: String = "",
@@ -79,7 +81,8 @@ data class QrConfirmRequest(
 )
 
 data class PhoneVerifyRequest(
-    val firebaseIdToken: String,
+    @SerializedName("idToken")
+    val idToken: String,
     val phoneNumber: String? = null
 )
 

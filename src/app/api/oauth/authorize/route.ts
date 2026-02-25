@@ -45,57 +45,68 @@ async function validateAuthorizationRequest(
   return { client };
 }
 
-export async function GET(req: NextRequest) {
-  const session = await auth.api.getSession({ headers: req.headers });
-  if (!session?.user) {
-    return NextResponse.redirect(new URL("/auth/login", req.url));
-  }
+async function issueAuthorizationCode(userId: string, clientId: string, redirectUri: string, state: string | null, scopes: string[]) {
+  const code = `code_${crypto.randomUUID()}`;
+  
+  await prisma.oAuthToken.create({
+    data: {
+      accessToken: code,
+      clientId,
+      userId,
+      scopes,
+      expiresAt: new Date(Date.now() + 10 * 60 * 1000),
+    },
+  });
 
+  redirectUrl.searchParams.set("code", code);
+  if (state) redirectUrl.searchParams.set("state", state);
+  return NextResponse.redirect(redirectUrl);
+}
+
+export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const clientId = searchParams.get("client_id");
   const redirectUri = searchParams.get("redirect_uri");
   const state = searchParams.get("state");
-  const prompt = searchParams.get("prompt");
-  const requestedScopes = parseScopes(searchParams.get("scope"));
-
+  const scope = searchParams.get("scope") || "openid profile email";
+  
   if (!clientId || !redirectUri) {
     return NextResponse.json({ error: "invalid_request" }, { status: 400 });
   }
 
-  const validated = await validateAuthorizationRequest(clientId, redirectUri, requestedScopes);
+  const session = await auth.api.getSession({ headers: req.headers });
+  
+  // Not logged in - redirect to login with return URL
+  if (!session?.user) {
+    const loginUrl = new URL("/auth/login", req.url);
+    const returnUrl = `/api/oauth/authorize?${searchParams.toString()}`;
+    loginUrl.searchParams.set("returnTo", returnUrl);
+    return NextResponse.redirect(loginUrl);
+  }
+
+  // Validate client
+  const validated = await validateAuthorizationRequest(clientId, redirectUri, parseScopes(scope));
   if ("error" in validated) {
     return NextResponse.json({ error: validated.error }, { status: 400 });
   }
 
+  // Check existing authorization
   const existing = await prisma.oAuthAuthorization.findUnique({
     where: { userId_clientId: { userId: session.user.id, clientId } },
   });
 
-  if (existing && prompt !== "consent") {
-    const code = `code_${crypto.randomUUID()}`;
-    const redirectUrl = new URL(redirectUri);
-    redirectUrl.searchParams.set("code", code);
-    if (state) redirectUrl.searchParams.set("state", state);
-
-    await prisma.oAuthToken.create({
-      data: {
-        accessToken: code,
-        clientId,
-        userId: session.user.id,
-        scopes: requestedScopes,
-        expiresAt: new Date(Date.now() + 10 * 60 * 1000),
-      },
-    });
-
-    return NextResponse.redirect(redirectUrl.toString());
+  // Auto-approve if already authorized
+  if (existing) {
+    return await issueAuthorizationCode(session.user.id, clientId, redirectUri, state, parseScopes(scope));
   }
 
+  // Show consent
   const consentUrl = new URL("/oauth/consent", req.url);
   consentUrl.searchParams.set("client_id", clientId);
   consentUrl.searchParams.set("redirect_uri", redirectUri);
-  consentUrl.searchParams.set("scope", requestedScopes.join(" "));
+  consentUrl.searchParams.set("scope", scope);
   if (state) consentUrl.searchParams.set("state", state);
-  return NextResponse.redirect(consentUrl.toString());
+  return NextResponse.redirect(consentUrl);
 }
 
 export async function POST(req: NextRequest) {
@@ -104,41 +115,18 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
 
-  const contentType = req.headers.get("content-type") || "";
-  let clientId = "";
-  let redirectUri = "";
-  let scope = "profile email";
-  let state: string | null = null;
-  let action = "deny";
-
-  if (contentType.includes("application/json")) {
-    const payload = (await req.json()) as {
-      client_id?: string;
-      redirect_uri?: string;
-      scope?: string;
-      state?: string;
-      action?: string;
-    };
-    clientId = payload.client_id || "";
-    redirectUri = payload.redirect_uri || "";
-    scope = payload.scope || "profile email";
-    state = payload.state || null;
-    action = payload.action || "deny";
-  } else {
-    const formData = await req.formData();
-    clientId = String(formData.get("client_id") || "");
-    redirectUri = String(formData.get("redirect_uri") || "");
-    scope = String(formData.get("scope") || "profile email");
-    state = (formData.get("state") as string | null) || null;
-    action = String(formData.get("action") || "deny");
-  }
+  const formData = await req.formData();
+  const clientId = String(formData.get("client_id") || "");
+  const redirectUri = String(formData.get("redirect_uri") || "");
+  const scope = String(formData.get("scope") || "openid profile email");
+  const state = formData.get("state") as string | null;
+  const action = String(formData.get("action") || "deny");
 
   if (!clientId || !redirectUri) {
     return NextResponse.json({ error: "invalid_request" }, { status: 400 });
   }
 
-  const requestedScopes = parseScopes(scope);
-  const validated = await validateAuthorizationRequest(clientId, redirectUri, requestedScopes);
+  const validated = await validateAuthorizationRequest(clientId, redirectUri, parseScopes(scope));
   if ("error" in validated) {
     return NextResponse.json({ error: validated.error }, { status: 400 });
   }
@@ -148,36 +136,23 @@ export async function POST(req: NextRequest) {
   if (action !== "allow") {
     redirectUrl.searchParams.set("error", "access_denied");
     if (state) redirectUrl.searchParams.set("state", state);
-    return NextResponse.redirect(redirectUrl.toString());
+    return NextResponse.redirect(redirectUrl);
   }
 
+  // Save authorization
   await prisma.oAuthAuthorization.upsert({
     where: { userId_clientId: { userId: session.user.id, clientId } },
     create: {
       userId: session.user.id,
       clientId,
-      scopes: requestedScopes,
+      scopes: parseScopes(scope),
       expiresAt: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000),
     },
     update: {
-      scopes: requestedScopes,
+      scopes: parseScopes(scope),
       expiresAt: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000),
     },
   });
 
-  const code = `code_${crypto.randomUUID()}`;
-  await prisma.oAuthToken.create({
-    data: {
-      accessToken: code,
-      clientId,
-      userId: session.user.id,
-      scopes: requestedScopes,
-      expiresAt: new Date(Date.now() + 10 * 60 * 1000),
-    },
-  });
-
-  redirectUrl.searchParams.set("code", code);
-  if (state) redirectUrl.searchParams.set("state", state);
-
-  return NextResponse.redirect(redirectUrl.toString());
+  return await issueAuthorizationCode(session.user.id, clientId, redirectUri, state, parseScopes(scope));
 }

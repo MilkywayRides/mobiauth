@@ -4,23 +4,16 @@ import { auth } from "@/lib/auth";
 
 const prisma = new PrismaClient();
 
-export async function DELETE(
-  req: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function POST(req: NextRequest) {
   const session = await auth.api.getSession({ headers: req.headers });
   
   if (!session?.user) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
 
-  const { id } = await params;
-
-  await prisma.oAuthClient.deleteMany({
-    where: {
-      id,
-      userId: session.user.id,
-    },
+  // Delete all OAuth authorizations for this user
+  await prisma.oAuthAuthorization.deleteMany({
+    where: { userId: session.user.id },
   });
 
   return NextResponse.json({ success: true });

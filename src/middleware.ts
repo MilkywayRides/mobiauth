@@ -7,6 +7,7 @@ const publicRoutes = [
     "/auth/reset-password",
     "/auth/verify-email",
     "/auth/qr-login",
+    "/oauth/consent",
 ];
 
 function isPublicRoute(pathname: string): boolean {
@@ -44,7 +45,7 @@ export async function middleware(req: NextRequest) {
     // If accessing protected routes without session, redirect to login
     if (!isPublicRoute(pathname) && !sessionCookie) {
         const loginUrl = new URL("/auth/login", req.url);
-        loginUrl.searchParams.set("from", pathname);
+        loginUrl.searchParams.set("returnTo", pathname);
         return NextResponse.redirect(loginUrl);
     }
 

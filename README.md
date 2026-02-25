@@ -1,1 +1,1 @@
-# mobiauth
+# BlazeNeuro Auth

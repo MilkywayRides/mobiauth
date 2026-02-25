@@ -396,6 +396,32 @@ High-security external control endpoint intended for your controller app.
 - apiKeys (metadata)
 - auditLogs (optional)
 
+
+
+
+### Advanced OAuth client setup (recommended)
+
+When creating OAuth clients (`/api/oauth/clients` or `create_oauth_client` in secure-control):
+
+- Use **exact HTTPS callback URLs** (no wildcards).
+- Keep callback list small (principle of least exposure).
+- Use least-privilege scopes only.
+- Prefer PKCE + exact redirect matching + refresh-token rotation (returned in advanced profile).
+- Separate clients per environment (dev/staging/prod).
+
+### Additional secure-control actions
+
+The control plane also supports admin-style management actions for external apps:
+
+- `list_users`
+- `set_user_role` (`userId`, `role`)
+- `list_api_keys` (`userId?`, `limit?`)
+- `create_api_key` (`userId`, `name`, `scopes?`, `rateLimit?`, `expiresAt?`)
+- `list_oauth_clients` (`userId?`, `limit?`)
+- `create_oauth_client` (`userId`, `name`, `redirectUris`, optional metadata/scopes)
+
+These are intended for your external controller app and return encrypted responses.
+
 ---
 
 ## 10) Health & Webhooks

@@ -1,4 +1,4 @@
-# 🔐 Auth Platform - OAuth & Phone Auth
+# 🔐 BlazeNeuro Auth - OAuth & Phone Auth
 
 ## ✨ What's New
 

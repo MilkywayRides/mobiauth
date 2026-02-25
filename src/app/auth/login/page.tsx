@@ -11,7 +11,7 @@ export default function LoginPage() {
                     <div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
                         <Shield className="size-4" />
                     </div>
-                    AuthPlatform
+                    BlazeNeuro Auth
                 </Link>
                 <Suspense fallback={<div>Loading...</div>}>
                     <LoginForm />

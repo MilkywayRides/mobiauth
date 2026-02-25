@@ -36,14 +36,17 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "User not found" }, { status: 404 });
   }
 
-  const response: Record<string, unknown> = { id: user.id };
+  const response: Record<string, unknown> = { 
+    sub: user.id,
+    id: user.id 
+  };
 
-  if (oauthToken.scopes.includes("profile")) {
+  if (oauthToken.scopes.includes("profile") || oauthToken.scopes.includes("openid")) {
     response.name = user.name;
-    response.image = user.image;
+    response.picture = user.image;
   }
 
-  if (oauthToken.scopes.includes("email")) {
+  if (oauthToken.scopes.includes("email") || oauthToken.scopes.includes("openid")) {
     response.email = user.email;
     response.email_verified = user.emailVerified;
   }

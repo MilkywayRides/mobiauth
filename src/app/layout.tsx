@@ -3,7 +3,7 @@ import { Toaster } from "sonner";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Auth Platform",
+  title: "BlazeNeuro Auth",
   description: "Enterprise-grade authentication platform",
 };
 

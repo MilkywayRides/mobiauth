@@ -5,6 +5,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import com.authplatform.app.data.api.AuthApi
 import com.authplatform.app.data.model.*
@@ -13,6 +14,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import retrofit2.Response
+import java.net.URLDecoder
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -29,6 +31,7 @@ class AuthRepository @Inject constructor(
         private val USER_EMAIL = stringPreferencesKey("user_email")
         private val USER_ROLE = stringPreferencesKey("user_role")
         private val USER_ID = stringPreferencesKey("user_id")
+        private val SESSION_EXPIRES_AT = longPreferencesKey("session_expires_at")
         
         suspend fun getSessionToken(context: Context): String? {
             return context.dataStore.data.first()[SESSION_TOKEN]
@@ -44,7 +47,9 @@ class AuthRepository @Inject constructor(
     }
 
     val isLoggedIn: Flow<Boolean> = context.dataStore.data.map { prefs ->
-        prefs[SESSION_TOKEN] != null
+        val token = prefs[SESSION_TOKEN]
+        val expiresAt = prefs[SESSION_EXPIRES_AT]
+        token != null && (expiresAt == null || System.currentTimeMillis() < expiresAt)
     }
 
     val savedUserName: Flow<String?> = context.dataStore.data.map { it[USER_NAME] }
@@ -59,15 +64,11 @@ class AuthRepository @Inject constructor(
             
             if (response.isSuccessful) {
                 val body = response.body()
-                android.util.Log.d("AuthRepository", "Response body: $body")
-                android.util.Log.d("AuthRepository", "User: ${body?.user}")
-                android.util.Log.d("AuthRepository", "User name: ${body?.user?.name}")
-                android.util.Log.d("AuthRepository", "User email: ${body?.user?.email}")
-                
+                    
                 val sessionToken = extractSessionCookie(response)
                 
                 if (body?.user != null) {
-                    saveSession(sessionToken, body.user)
+                    saveSession(sessionToken, body.user, body.session?.expiresAt)
                     Result.success(body.user)
                 } else {
                     android.util.Log.e("AuthRepository", "User is null in response")
@@ -96,7 +97,7 @@ class AuthRepository @Inject constructor(
                 
                 val sessionToken = extractSessionCookie(response)
                 if (body?.user != null) {
-                    saveSession(sessionToken, body.user)
+                    saveSession(sessionToken, body.user, body.session?.expiresAt)
                     Result.success(body.user)
                 } else {
                     android.util.Log.e("AuthRepository", "SignUp: User is null")
@@ -120,7 +121,7 @@ class AuthRepository @Inject constructor(
                 val body = response.body()
                 val sessionToken = extractSessionCookie(response)
                 if (body?.user != null) {
-                    saveSession(sessionToken, body.user)
+                    saveSession(sessionToken, body.user, body.session?.expiresAt)
                     Result.success(body.user)
                 } else {
                     Result.failure(Exception("Invalid response"))
@@ -184,9 +185,14 @@ class AuthRepository @Inject constructor(
         clearSession()
     }
 
-    private suspend fun saveSession(token: String?, user: User) {
+    private suspend fun saveSession(token: String?, user: User, expiresAtIso: String? = null) {
         context.dataStore.edit { prefs ->
             token?.let { prefs[SESSION_TOKEN] = it }
+            expiresAtIso?.let { iso ->
+                runCatching { java.time.Instant.parse(iso).toEpochMilli() }.getOrNull()?.let { epoch ->
+                    prefs[SESSION_EXPIRES_AT] = epoch
+                }
+            }
             prefs[USER_NAME] = user.name
             prefs[USER_EMAIL] = user.email
             prefs[USER_ROLE] = user.role
@@ -201,7 +207,7 @@ class AuthRepository @Inject constructor(
     suspend fun getUserData(): Map<String, String?> {
         return try {
             val token = context.dataStore.data.first()[SESSION_TOKEN]
-            android.util.Log.d("AuthRepository", "Token: ${token?.take(20)}...")
+            android.util.Log.d("AuthRepository", "Session token available: ${!token.isNullOrEmpty()}")
             
             if (token.isNullOrEmpty()) {
                 android.util.Log.d("AuthRepository", "No token, returning local data")
@@ -291,9 +297,14 @@ class AuthRepository @Inject constructor(
     }
 
     private fun <T> extractSessionCookie(response: Response<T>): String? {
-        return response.headers().values("Set-Cookie")
-            .firstOrNull { it.startsWith("auth.session_token=") }
-            ?.substringBefore(";")
-            ?.substringAfter("=")
+        val cookies = response.headers().values("Set-Cookie")
+        val raw = cookies.firstOrNull {
+            it.startsWith("auth.session_token=") || it.startsWith("__Secure-auth.session_token=")
+        }?.substringBefore(";")?.substringAfter("=")
+
+        return raw?.let {
+            runCatching { URLDecoder.decode(it, Charsets.UTF_8.name()) }.getOrDefault(it)
+                .substringBeforeLast(".")
+        }
     }
 }

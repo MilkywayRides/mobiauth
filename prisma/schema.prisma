@@ -148,14 +148,16 @@ model OAuthAuthorization {
 }
 
 model OAuthToken {
-  id           String   @id @default(cuid())
-  accessToken  String   @unique
-  refreshToken String?  @unique
-  clientId     String
-  userId       String
-  scopes       String[]
-  expiresAt    DateTime
-  createdAt    DateTime @default(now())
+  id                   String   @id @default(cuid())
+  accessToken          String   @unique
+  refreshToken         String?  @unique
+  clientId             String
+  userId               String
+  scopes               String[]
+  codeChallenge        String?
+  codeChallengeMethod  String?
+  expiresAt            DateTime
+  createdAt            DateTime @default(now())
 
   client OAuthClient @relation(fields: [clientId], references: [clientId], onDelete: Cascade)
 

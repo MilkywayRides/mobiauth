@@ -1,43 +1,64 @@
 package com.authplatform.app.ui.screens
 
-import android.content.Intent
 import android.net.Uri
 import androidx.browser.customtabs.CustomTabsIntent
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
 import com.authplatform.app.BuildConfig
-import com.authplatform.app.ui.components.*
-import com.authplatform.app.ui.theme.*
-import com.authplatform.app.ui.viewmodel.AuthViewModel
+import com.authplatform.app.ui.utils.extractHost
+import com.authplatform.app.ui.utils.isTrustedAuthDomain
 
 @Composable
 fun OAuthButtons(
     onSuccess: () -> Unit,
-    viewModel: AuthViewModel = hiltViewModel()
 ) {
     val context = LocalContext.current
     val baseUrl = BuildConfig.BASE_URL
+
+    var pendingExternalUrl by remember { mutableStateOf<String?>(null) }
+
+    fun launchAuthUrl(url: String) {
+        val intent = CustomTabsIntent.Builder().setShowTitle(true).build()
+        intent.launchUrl(context, Uri.parse(url))
+    }
+
+    fun openWithConfirmation(url: String) {
+        if (isTrustedAuthDomain(url)) {
+            launchAuthUrl(url)
+        } else {
+            pendingExternalUrl = url
+        }
+    }
 
     Column(
         modifier = Modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
-        // Google Sign-In
         OutlinedButton(
             onClick = {
-                val intent = CustomTabsIntent.Builder()
-                    .setShowTitle(true)
-                    .build()
                 val url = "$baseUrl/api/auth/sign-in/social/google"
-                intent.launchUrl(context, Uri.parse(url))
+                openWithConfirmation(url)
             },
             modifier = Modifier.fillMaxWidth(),
             colors = ButtonDefaults.outlinedButtonColors(
@@ -53,14 +74,10 @@ fun OAuthButtons(
             Text("Continue with Google")
         }
 
-        // GitHub Sign-In
         OutlinedButton(
             onClick = {
-                val intent = CustomTabsIntent.Builder()
-                    .setShowTitle(true)
-                    .build()
                 val url = "$baseUrl/api/auth/sign-in/social/github"
-                intent.launchUrl(context, Uri.parse(url))
+                openWithConfirmation(url)
             },
             modifier = Modifier.fillMaxWidth(),
             colors = ButtonDefaults.outlinedButtonColors(
@@ -75,5 +92,31 @@ fun OAuthButtons(
             Spacer(modifier = Modifier.width(8.dp))
             Text("Continue with GitHub")
         }
+    }
+
+    pendingExternalUrl?.let { externalUrl ->
+        AlertDialog(
+            onDismissRequest = { pendingExternalUrl = null },
+            title = { Text("Share data with external app?") },
+            text = {
+                Text(
+                    "You are about to continue sign-in on ${extractHost(externalUrl)}. " +
+                        "Your profile data may be shared with that app. Do you want to continue?"
+                )
+            },
+            confirmButton = {
+                TextButton(onClick = {
+                    pendingExternalUrl = null
+                    launchAuthUrl(externalUrl)
+                }) {
+                    Text("Continue")
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { pendingExternalUrl = null }) {
+                    Text("Cancel")
+                }
+            }
+        )
     }
 }

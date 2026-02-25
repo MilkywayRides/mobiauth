@@ -5,21 +5,49 @@ import {
   encryptEnvelope,
   type EncryptedEnvelope,
 } from "@/lib/secure-control";
+import { generateApiKey, generateClientCredentials, hashSecret } from "@/lib/oauth";
+import { buildAdvancedConfig, normalizeRedirectUris, normalizeScopes, normalizeWebsite } from "@/lib/oauth-config";
 
 const prisma = new PrismaClient();
 
 type ControlRequest =
   | { action: "health" }
-  | { action: "export_full_state"; includeAuditLogs?: boolean; limit?: number };
+  | { action: "export_full_state"; includeAuditLogs?: boolean; limit?: number }
+  | { action: "list_users"; limit?: number }
+  | { action: "set_user_role"; userId: string; role: string }
+  | { action: "list_api_keys"; userId?: string; limit?: number }
+  | {
+      action: "create_api_key";
+      userId: string;
+      name: string;
+      scopes?: string[];
+      rateLimit?: number;
+      expiresAt?: string;
+    }
+  | { action: "list_oauth_clients"; userId?: string; limit?: number }
+  | {
+      action: "create_oauth_client";
+      userId: string;
+      name: string;
+      redirectUris: string[];
+      scopes?: string[];
+      description?: string;
+      logo?: string;
+      website?: string;
+    };
 
 function isControlRequest(input: unknown): input is ControlRequest {
   if (!input || typeof input !== "object") return false;
   const value = input as Record<string, unknown>;
-  return value.action === "health" || value.action === "export_full_state";
+  return typeof value.action === "string";
 }
 
 function unauthorized() {
   return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+}
+
+function clampLimit(limit: number | undefined, fallback = 500) {
+  return Math.min(Math.max(limit ?? fallback, 1), 5000);
 }
 
 export async function POST(req: NextRequest) {
@@ -47,8 +75,174 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const limit = Math.min(Math.max(payload.limit ?? 500, 1), 5000);
+    if (payload.action === "list_users") {
+      const users = await prisma.user.findMany({
+        take: clampLimit(payload.limit, 200),
+        orderBy: { createdAt: "desc" },
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          role: true,
+          emailVerified: true,
+          banned: true,
+          createdAt: true,
+          updatedAt: true,
+        },
+      });
 
+      return NextResponse.json(encryptEnvelope({ users }, envelope.nonce));
+    }
+
+    if (payload.action === "set_user_role") {
+      if (!payload.userId || !payload.role) {
+        return NextResponse.json({ error: "userId and role are required" }, { status: 400 });
+      }
+
+      const user = await prisma.user.update({
+        where: { id: payload.userId },
+        data: { role: payload.role },
+        select: { id: true, name: true, email: true, role: true, updatedAt: true },
+      });
+
+      return NextResponse.json(encryptEnvelope({ success: true, user }, envelope.nonce));
+    }
+
+    if (payload.action === "list_api_keys") {
+      const apiKeys = await prisma.apiKey.findMany({
+        where: payload.userId ? { userId: payload.userId } : undefined,
+        take: clampLimit(payload.limit, 200),
+        orderBy: { createdAt: "desc" },
+        select: {
+          id: true,
+          name: true,
+          key: true,
+          userId: true,
+          scopes: true,
+          rateLimit: true,
+          active: true,
+          lastUsedAt: true,
+          expiresAt: true,
+          createdAt: true,
+        },
+      });
+
+      const masked = apiKeys.map((item) => ({
+        ...item,
+        key: `${item.key.slice(0, 12)}...${item.key.slice(-4)}`,
+      }));
+
+      return NextResponse.json(encryptEnvelope({ apiKeys: masked }, envelope.nonce));
+    }
+
+    if (payload.action === "create_api_key") {
+      if (!payload.userId || !payload.name) {
+        return NextResponse.json({ error: "userId and name are required" }, { status: 400 });
+      }
+
+      const key = generateApiKey();
+      const apiKey = await prisma.apiKey.create({
+        data: {
+          key,
+          name: payload.name,
+          userId: payload.userId,
+          scopes: payload.scopes || ["read:user"],
+          rateLimit: payload.rateLimit || 1000,
+          expiresAt: payload.expiresAt ? new Date(payload.expiresAt) : null,
+        },
+        select: { id: true, name: true, userId: true, scopes: true, rateLimit: true, createdAt: true },
+      });
+
+      return NextResponse.json(
+        encryptEnvelope(
+          {
+            success: true,
+            apiKey,
+            plainTextKey: key,
+            warning: "Save key now. It will not be returned again.",
+          },
+          envelope.nonce
+        )
+      );
+    }
+
+    if (payload.action === "list_oauth_clients") {
+      const oauthClients = await prisma.oAuthClient.findMany({
+        where: payload.userId ? { userId: payload.userId } : undefined,
+        take: clampLimit(payload.limit, 200),
+        orderBy: { createdAt: "desc" },
+        select: {
+          id: true,
+          clientId: true,
+          name: true,
+          description: true,
+          website: true,
+          redirectUris: true,
+          scopes: true,
+          userId: true,
+          active: true,
+          createdAt: true,
+          updatedAt: true,
+        },
+      });
+
+      return NextResponse.json(encryptEnvelope({ oauthClients }, envelope.nonce));
+    }
+
+    if (payload.action === "create_oauth_client") {
+      if (!payload.userId || !payload.name || !payload.redirectUris?.length) {
+        return NextResponse.json(
+          { error: "userId, name, and redirectUris are required" },
+          { status: 400 }
+        );
+      }
+
+      const normalizedRedirectUris = normalizeRedirectUris(payload.redirectUris);
+      const normalizedScopes = normalizeScopes(payload.scopes);
+      const normalizedWebsite = normalizeWebsite(payload.website);
+      const advancedConfig = buildAdvancedConfig(undefined, normalizedRedirectUris);
+
+      const { clientId, clientSecret } = generateClientCredentials();
+      const client = await prisma.oAuthClient.create({
+        data: {
+          userId: payload.userId,
+          clientId,
+          clientSecret: hashSecret(clientSecret),
+          name: payload.name,
+          description: payload.description,
+          logo: payload.logo,
+          website: normalizedWebsite,
+          redirectUris: normalizedRedirectUris,
+          scopes: normalizedScopes,
+        },
+        select: {
+          id: true,
+          userId: true,
+          clientId: true,
+          name: true,
+          redirectUris: true,
+          scopes: true,
+          createdAt: true,
+        },
+      });
+
+      return NextResponse.json(
+        encryptEnvelope(
+          {
+            success: true,
+            oauthClient: {
+              ...client,
+              advanced: advancedConfig,
+            },
+            plainTextClientSecret: clientSecret,
+            warning: "Save client secret now. It will not be returned again.",
+          },
+          envelope.nonce
+        )
+      );
+    }
+
+    const limit = clampLimit(payload.limit);
     const [users, sessions, oauthClients, apiKeys, oauthAuthorizations, oauthTokens, auditLogs] =
       await Promise.all([
         prisma.user.findMany({
@@ -126,19 +320,20 @@ export async function POST(req: NextRequest) {
           },
         }),
         payload.includeAuditLogs
-          ? prisma.auditLog.findMany({
-              take: limit,
-              orderBy: { createdAt: "desc" },
-              select: {
-                id: true,
-                userId: true,
-                action: true,
-                ipAddress: true,
-                userAgent: true,
-                metadata: true,
-                createdAt: true,
-              },
-            })
+          ? prisma.$queryRaw<
+              Array<{
+                id: string;
+                userId: string;
+                action: string;
+                ipAddress: string | null;
+                userAgent: string | null;
+                metadata: unknown;
+                createdAt: Date;
+              }>
+            >`SELECT id, "userId", action, "ipAddress", "userAgent", metadata, "createdAt"
+              FROM audit_log
+              ORDER BY "createdAt" DESC
+              LIMIT ${limit}`
           : Promise.resolve([]),
       ]);
 

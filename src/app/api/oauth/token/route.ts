@@ -5,7 +5,43 @@ import { verifySecret, generateAccessToken, generateRefreshToken } from "@/lib/o
 const prisma = new PrismaClient();
 
 export async function POST(req: NextRequest) {
-  const { grant_type, code, client_id, client_secret, refresh_token } = await req.json();
+  const contentType = req.headers.get("content-type") || "";
+  const authHeader = req.headers.get("authorization");
+  
+  let grant_type, code, client_id, client_secret, refresh_token;
+
+  // Extract client credentials from Basic Auth header
+  if (authHeader?.startsWith("Basic ")) {
+    const base64 = authHeader.substring(6);
+    const decoded = Buffer.from(base64, "base64").toString();
+    const [id, secret] = decoded.split(":");
+    client_id = id;
+    client_secret = secret;
+  }
+
+  if (contentType.includes("application/x-www-form-urlencoded")) {
+    const text = await req.text();
+    const params = new URLSearchParams(text);
+    grant_type = params.get("grant_type");
+    code = params.get("code");
+    client_id = client_id || params.get("client_id");
+    client_secret = client_secret || params.get("client_secret");
+    refresh_token = params.get("refresh_token");
+  } else if (contentType.includes("application/json")) {
+    const body = await req.json();
+    grant_type = body.grant_type;
+    code = body.code;
+    client_id = client_id || body.client_id;
+    client_secret = client_secret || body.client_secret;
+    refresh_token = body.refresh_token;
+  } else {
+    const formData = await req.formData();
+    grant_type = formData.get("grant_type");
+    code = formData.get("code");
+    client_id = client_id || formData.get("client_id");
+    client_secret = client_secret || formData.get("client_secret");
+    refresh_token = formData.get("refresh_token");
+  }
 
   if (!client_id || !client_secret) {
     return NextResponse.json({ error: "invalid_client" }, { status: 401 });
