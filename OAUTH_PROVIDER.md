@@ -1,303 +1,299 @@
-# OAuth Provider & API Documentation
+# How to Use BlazeNeuro Auth as an OAuth Provider
 
-## Your Auth System is Now a Full OAuth Provider
+## Overview
+This guide shows how to integrate "Sign in with BlazeNeuro" into your application, allowing users to authenticate using their BlazeNeuro account.
 
-### Base URL
+## What You're Building
+Users will see a "Sign in with BlazeNeuro" button in your app, which redirects them to `auth.blazeneuro.com` to login, then returns them to your app with their authentication.
+
+## Prerequisites
+1. Your app must be registered with BlazeNeuro Auth
+2. You need OAuth credentials (Client ID & Client Secret)
+3. You need to configure callback URLs
+
+---
+
+## Step 1: Register Your Application
+
+Contact BlazeNeuro to register your application and receive:
+- **Client ID**: `your-app-client-id`
+- **Client Secret**: `your-app-client-secret`
+- **Authorized Redirect URI**: `https://yourapp.com/api/auth/callback/blazeneuro`
+
+---
+
+## Step 2: Install Dependencies
+
+```bash
+npm install better-auth
 ```
-https://your-domain.com
+
+---
+
+## Step 3: Configure BlazeNeuro as OAuth Provider
+
+Create `lib/auth.ts`:
+
+```typescript
+import { betterAuth } from "better-auth";
+
+export const auth = betterAuth({
+    database: {
+        // Your database config
+    },
+    socialProviders: {
+        // Add BlazeNeuro as a custom OAuth provider
+        blazeneuro: {
+            clientId: process.env.BLAZENEURO_CLIENT_ID!,
+            clientSecret: process.env.BLAZENEURO_CLIENT_SECRET!,
+            authorizationUrl: "https://auth.blazeneuro.com/oauth/authorize",
+            tokenUrl: "https://auth.blazeneuro.com/oauth/token",
+            userInfoUrl: "https://auth.blazeneuro.com/oauth/userinfo",
+            scopes: ["openid", "profile", "email"],
+        },
+    },
+});
 ```
 
-## 🔐 Cross-App Authentication (Encrypted)
+---
 
-### Setup
+## Step 4: Environment Variables
+
 Add to `.env`:
-```env
-CROSS_APP_MASTER_KEY=your-secret-master-key-min-32-chars
-CROSS_APP_ENCRYPTION_KEY=64-char-hex-string
-```
-
-Generate keys:
 ```bash
-node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+BLAZENEURO_CLIENT_ID="your-client-id"
+BLAZENEURO_CLIENT_SECRET="your-client-secret"
 ```
 
-### 1. Authenticate User from Another App
-```bash
-POST /api/cross-app/auth
-X-Master-Key: YOUR_MASTER_KEY
-Content-Type: application/json
+---
 
-{
-  "email": "user@example.com",
-  "appId": "my-other-app"
-}
+## Step 5: Create Auth API Route
+
+Create `app/api/auth/[...all]/route.ts`:
+
+```typescript
+import { auth } from "@/lib/auth";
+import { toNextJsHandler } from "better-auth/next-js";
+
+export const { GET, POST } = toNextJsHandler(auth);
 ```
 
-Response:
-```json
-{
-  "token": "encrypted-token-string",
-  "user": {
-    "id": "user_123",
-    "email": "user@example.com",
-    "name": "John Doe",
-    "image": "https://..."
-  },
-  "expiresIn": 300
-}
-```
+---
 
-### 2. Verify Token in Your App
-```bash
-POST /api/cross-app/verify
-Content-Type: application/json
+## Step 6: Create Auth Client
 
-{
-  "token": "encrypted-token-string"
-}
-```
+Create `lib/auth-client.ts`:
 
-Response:
-```json
-{
-  "valid": true,
-  "user": {
-    "id": "user_123",
-    "email": "user@example.com",
-    "name": "John Doe",
-    "emailVerified": true,
-    "role": "user"
-  },
-  "appId": "my-other-app"
-}
-```
+```typescript
+import { createAuthClient } from "better-auth/react";
 
-### 3. Sync User Data (Encrypted)
-```bash
-POST /api/cross-app/sync
-X-Master-Key: YOUR_MASTER_KEY
-Content-Type: application/json
-
-{
-  "encryptedData": "base64-encrypted-payload"
-}
-```
-
-Supported actions:
-- `createUser` - Create new user
-- `updateUser` - Update existing user
-- `getUser` - Retrieve user data
-
-## OAuth 2.0 Flow
-
-### 1. Register OAuth Application
-```bash
-POST /api/oauth/clients
-Authorization: Bearer <your-session-token>
-Content-Type: application/json
-
-{
-  "name": "My App",
-  "description": "My awesome application",
-  "website": "https://myapp.com",
-  "redirectUris": ["https://myapp.com/callback"],
-  "scopes": ["profile", "email"]
-}
-```
-
-Response:
-```json
-{
-  "client": {
-    "id": "...",
-    "clientId": "client_abc123...",
-    "clientSecret": "secret_xyz789...",
-    "name": "My App"
-  },
-  "warning": "Save the client secret now. You won't be able to see it again."
-}
-```
-
-### 2. Authorization URL
-Redirect users to:
-```
-GET /api/oauth/authorize?client_id=CLIENT_ID&redirect_uri=REDIRECT_URI&scope=profile email&state=RANDOM_STATE
-```
-
-### 3. Exchange Code for Token
-```bash
-POST /api/oauth/token
-Content-Type: application/json
-
-{
-  "grant_type": "authorization_code",
-  "code": "code_...",
-  "client_id": "client_...",
-  "client_secret": "secret_..."
-}
-```
-
-Response:
-```json
-{
-  "access_token": "at_...",
-  "refresh_token": "rt_...",
-  "token_type": "Bearer",
-  "expires_in": 3600,
-  "scope": "profile email"
-}
-```
-
-### 4. Get User Info
-```bash
-GET /api/oauth/userinfo
-Authorization: Bearer at_...
-```
-
-Response:
-```json
-{
-  "id": "user_123",
-  "name": "John Doe",
-  "email": "john@example.com",
-  "image": "https://...",
-  "email_verified": true
-}
-```
-
-### 5. Refresh Token
-```bash
-POST /api/oauth/token
-Content-Type: application/json
-
-{
-  "grant_type": "refresh_token",
-  "refresh_token": "rt_...",
-  "client_id": "client_...",
-  "client_secret": "secret_..."
-}
-```
-
-## API Keys
-
-### Create API Key
-```bash
-POST /api/keys
-Authorization: Bearer <your-session-token>
-Content-Type: application/json
-
-{
-  "name": "Production Key",
-  "scopes": ["read:user"],
-  "rateLimit": 1000,
-  "expiresAt": "2027-12-31T23:59:59Z"
-}
-```
-
-Response:
-```json
-{
-  "apiKey": {
-    "id": "...",
-    "key": "sk_abc123...",
-    "name": "Production Key"
-  },
-  "warning": "Save this key now. You won't be able to see it again."
-}
-```
-
-### Use API Key
-```bash
-GET /api/v1/user
-Authorization: Bearer sk_abc123...
-```
-
-Response:
-```json
-{
-  "id": "user_123",
-  "name": "John Doe",
-  "email": "john@example.com"
-}
-```
-
-## Available Scopes
-
-- `profile` - Basic profile information (name, image)
-- `email` - Email address and verification status
-- `read:user` - Read user data (API keys)
-- `write:user` - Update user data (API keys)
-
-## Rate Limits
-
-- OAuth clients: Based on token usage
-- API keys: Configurable per key (default: 1000/hour)
-- Cross-app: Protected by master key
-
-## Integration Examples
-
-### Node.js - Cross-App Auth
-```javascript
-const crypto = require('crypto');
-
-// Encrypt payload
-function encryptPayload(data, key) {
-  const iv = crypto.randomBytes(16);
-  const cipher = crypto.createCipheriv('aes-256-gcm', Buffer.from(key.slice(0, 64), 'hex'), iv);
-  const encrypted = Buffer.concat([cipher.update(JSON.stringify(data)), cipher.final()]);
-  const authTag = cipher.getAuthTag();
-  return Buffer.concat([iv, authTag, encrypted]).toString('base64');
-}
-
-// Authenticate user
-const response = await fetch('https://your-domain.com/api/cross-app/auth', {
-  method: 'POST',
-  headers: {
-    'X-Master-Key': process.env.MASTER_KEY,
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    email: 'user@example.com',
-    appId: 'my-app'
-  })
+export const authClient = createAuthClient({
+    baseURL: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
 });
 
-const { token, user } = await response.json();
-
-// Verify token
-const verifyRes = await fetch('https://your-domain.com/api/cross-app/verify', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ token })
-});
+export const { signIn, signOut, useSession } = authClient;
 ```
 
-### Python
-```python
-import requests
-response = requests.get('https://your-domain.com/api/v1/user', 
-    headers={'Authorization': 'Bearer sk_...'})
+---
+
+## Step 7: Add "Sign in with BlazeNeuro" Button
+
+```typescript
+"use client";
+import { signIn } from "@/lib/auth-client";
+
+export function LoginPage() {
+    return (
+        <button onClick={() => signIn.social({
+            provider: "blazeneuro",
+            callbackURL: "/dashboard"
+        })}>
+            Sign in with BlazeNeuro
+        </button>
+    );
+}
 ```
 
-### cURL
-```bash
-curl -H "Authorization: Bearer sk_..." https://your-domain.com/api/v1/user
+---
+
+## Step 8: Handle User Session
+
+```typescript
+"use client";
+import { useSession, signOut } from "@/lib/auth-client";
+
+export function Dashboard() {
+    const { data: session } = useSession();
+    
+    if (!session) return <div>Please login</div>;
+    
+    return (
+        <div>
+            <h1>Welcome, {session.user.name}</h1>
+            <p>Email: {session.user.email}</p>
+            <button onClick={() => signOut()}>Logout</button>
+        </div>
+    );
+}
 ```
 
-## Security Features
+---
 
-✅ AES-256-GCM encryption for cross-app tokens
-✅ Master key authentication
-✅ 5-minute token expiry
-✅ Client secret hashing (SHA-256)
-✅ Session validation for OAuth/API key creation
-✅ Rate limiting per API key
-✅ Scope-based access control
+## OAuth Flow Diagram
 
-## Next Steps
+```
+1. User clicks "Sign in with BlazeNeuro"
+   ↓
+2. Redirect to: https://auth.blazeneuro.com/oauth/authorize
+   ↓
+3. User logs in on BlazeNeuro
+   ↓
+4. BlazeNeuro redirects back: https://yourapp.com/api/auth/callback/blazeneuro?code=xxx
+   ↓
+5. Your app exchanges code for access token
+   ↓
+6. Your app fetches user info from BlazeNeuro
+   ↓
+7. User is logged into your app
+```
 
-1. Run migrations: `npx prisma migrate dev`
-2. Deploy to production
-3. Update CORS settings for your domains
-4. Set up monitoring and logging
-5. Create developer documentation portal
+---
+
+## BlazeNeuro OAuth Endpoints
+
+| Endpoint | URL |
+|----------|-----|
+| Authorization | `https://auth.blazeneuro.com/oauth/authorize` |
+| Token Exchange | `https://auth.blazeneuro.com/oauth/token` |
+| User Info | `https://auth.blazeneuro.com/oauth/userinfo` |
+| Logout | `https://auth.blazeneuro.com/oauth/logout` |
+
+---
+
+## User Data Structure
+
+After successful authentication, you'll receive:
+
+```typescript
+{
+    id: "user-id",
+    email: "user@example.com",
+    name: "John Doe",
+    image: "https://...",
+    emailVerified: true
+}
+```
+
+---
+
+## Required Scopes
+
+- `openid` - Basic authentication
+- `profile` - User's name and profile info
+- `email` - User's email address
+
+---
+
+## Security Best Practices
+
+1. **Never expose Client Secret** - Keep it server-side only
+2. **Validate redirect URIs** - Only allow registered callback URLs
+3. **Use HTTPS** - Always in production
+4. **Store tokens securely** - Use httpOnly cookies
+5. **Implement CSRF protection** - Use state parameter
+
+---
+
+## Testing Locally
+
+1. Set callback URL to: `http://localhost:3000/api/auth/callback/blazeneuro`
+2. Register this URL with BlazeNeuro
+3. Test the OAuth flow
+
+---
+
+## Production Deployment
+
+1. Update callback URL to production domain
+2. Re-register with BlazeNeuro
+3. Update environment variables
+4. Test end-to-end flow
+
+---
+
+## Troubleshooting
+
+### Error: Invalid Redirect URI
+**Solution**: Ensure your callback URL is registered with BlazeNeuro exactly as configured.
+
+### Error: Invalid Client
+**Solution**: Check your Client ID and Client Secret are correct.
+
+### Error: Access Denied
+**Solution**: User declined authorization or scopes are incorrect.
+
+---
+
+## Complete Example
+
+```typescript
+// app/login/page.tsx
+"use client";
+import { signIn } from "@/lib/auth-client";
+
+export default function LoginPage() {
+    return (
+        <div className="flex min-h-screen items-center justify-center">
+            <div className="space-y-4">
+                <h1>Login to MyApp</h1>
+                <button 
+                    onClick={() => signIn.social({
+                        provider: "blazeneuro",
+                        callbackURL: "/dashboard"
+                    })}
+                    className="btn btn-primary"
+                >
+                    <img src="/blazeneuro-icon.svg" alt="" />
+                    Sign in with BlazeNeuro
+                </button>
+            </div>
+        </div>
+    );
+}
+
+// app/dashboard/page.tsx
+"use client";
+import { useSession, signOut } from "@/lib/auth-client";
+import { redirect } from "next/navigation";
+
+export default function Dashboard() {
+    const { data: session, isPending } = useSession();
+    
+    if (isPending) return <div>Loading...</div>;
+    if (!session) redirect("/login");
+    
+    return (
+        <div>
+            <nav>
+                <h1>Dashboard</h1>
+                <button onClick={() => signOut()}>Logout</button>
+            </nav>
+            <main>
+                <h2>Welcome, {session.user.name}!</h2>
+                <p>Email: {session.user.email}</p>
+                {session.user.image && (
+                    <img src={session.user.image} alt="Profile" />
+                )}
+            </main>
+        </div>
+    );
+}
+```
+
+---
+
+## Support
+
+For OAuth credentials and registration, contact: support@blazeneuro.com
+
+For technical issues, see: https://github.com/MilkywayRides/mobiauth
