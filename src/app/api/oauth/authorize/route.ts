@@ -58,6 +58,7 @@ async function issueAuthorizationCode(userId: string, clientId: string, redirect
     },
   });
 
+  const redirectUrl = new URL(redirectUri);
   redirectUrl.searchParams.set("code", code);
   if (state) redirectUrl.searchParams.set("state", state);
   return NextResponse.redirect(redirectUrl);
