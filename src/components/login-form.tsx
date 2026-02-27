@@ -43,8 +43,13 @@ export function LoginForm({
         toast.error(res.error.message || "Invalid credentials");
       } else {
         toast.success("Signed in successfully");
-        router.push(returnTo);
-        router.refresh();
+        // Redirect to returnTo URL (could be external)
+        if (returnTo.startsWith("http")) {
+          window.location.href = returnTo;
+        } else {
+          router.push(returnTo);
+          router.refresh();
+        }
       }
     } catch {
       toast.error("Something went wrong");

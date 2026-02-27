@@ -6,6 +6,8 @@ import { sendVerificationEmail, sendPasswordResetEmail } from "./email";
 
 const prisma = new PrismaClient();
 
+const TRUSTED_ORIGINS = process.env.TRUSTED_ORIGINS?.split(",") || [];
+
 export const auth = betterAuth({
     database: prismaAdapter(prisma, {
         provider: "postgresql",
@@ -16,7 +18,7 @@ export const auth = betterAuth({
 
     emailAndPassword: {
         enabled: true,
-        requireEmailVerification: false, // Set to true when email provider is configured
+        requireEmailVerification: false,
         sendResetPassword: async ({ user, url }) => {
             await sendPasswordResetEmail(user.email, url);
         },
@@ -33,21 +35,23 @@ export const auth = betterAuth({
         google: {
             clientId: process.env.GOOGLE_CLIENT_ID || "",
             clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
+            redirectURI: `${process.env.BETTER_AUTH_URL}/api/auth/callback/google`,
             enabled: !!(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET),
         },
         github: {
             clientId: process.env.GITHUB_CLIENT_ID || "",
             clientSecret: process.env.GITHUB_CLIENT_SECRET || "",
+            redirectURI: `${process.env.BETTER_AUTH_URL}/api/auth/callback/github`,
             enabled: !!(process.env.GITHUB_CLIENT_ID && process.env.GITHUB_CLIENT_SECRET),
         },
     },
 
     session: {
-        expiresIn: 60 * 60 * 24 * 7, // 7 days
-        updateAge: 60 * 60 * 24, // 1 day - update session every day
+        expiresIn: 60 * 60 * 24 * 7,
+        updateAge: 60 * 60 * 24,
         cookieCache: {
             enabled: true,
-            maxAge: 5 * 60, // 5 minutes
+            maxAge: 5 * 60,
         },
     },
 
@@ -59,9 +63,14 @@ export const auth = betterAuth({
     ],
 
     advanced: {
-        cookiePrefix: "auth",
+        cookiePrefix: "better-auth",
         generateId: false,
+        crossSubDomainCookies: {
+            enabled: true,
+        },
     },
+
+    trustedOrigins: [...TRUSTED_ORIGINS, process.env.BETTER_AUTH_URL || ""],
 });
 
 export type Session = typeof auth.$Infer.Session;

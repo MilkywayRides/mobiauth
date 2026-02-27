@@ -10,6 +10,9 @@ const publicRoutes = [
     "/oauth/consent",
 ];
 
+const TRUSTED_ORIGINS = process.env.TRUSTED_ORIGINS?.split(",") || [];
+const ALLOWED_API_KEYS = process.env.ALLOWED_API_KEYS?.split(",") || [];
+
 function isPublicRoute(pathname: string): boolean {
     return publicRoutes.some(route => pathname === route || pathname.startsWith(route + "/"));
 }
@@ -17,9 +20,13 @@ function isPublicRoute(pathname: string): boolean {
 export async function middleware(req: NextRequest) {
     const { pathname } = req.nextUrl;
 
-    // Allow API routes and static assets
+    // For API routes - allow all for now, auth handles its own validation
+    if (pathname.startsWith("/api/")) {
+        return NextResponse.next();
+    }
+
+    // Allow static assets
     if (
-        pathname.startsWith("/api/") ||
         pathname.startsWith("/_next") ||
         pathname.startsWith("/favicon") ||
         pathname.includes(".")
